@@ -5,7 +5,11 @@
       "scale" : "1x"
     },
     {
-      "filename" : "free-icon-logo-12868650.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "free-icon-authorization-8911401.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
