@@ -10,8 +10,18 @@ import UIKit
 final class ViewController: UIViewController {
     private let logoImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .yellow
+        imageView.backgroundColor = .white
         imageView.image = UIImage(named: "NewImage")
+
+        // масштабирование, сохраняет соотношение сторон
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let autorizationImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .white
+        imageView.image = UIImage(named: "AutorizationImage")
 
         // масштабирование, сохраняет соотношение сторон
         imageView.contentMode = .scaleAspectFit
@@ -20,13 +30,14 @@ final class ViewController: UIViewController {
 
     private let labelAutorization: UILabel = {
         let label = UILabel()
-        label.text = "Autorization"
+        label.text = "Wellcome, please sign in"
 
         // установка размера шрифта для лейбла
-        label.font = UIFont.systemFont(ofSize: 40)
-        label.backgroundColor = .black
-        label.textColor = .yellow
+        label.font = UIFont.systemFont(ofSize: 30)
+//        label.backgroundColor = .cyan
+        label.textColor = .black
         label.textAlignment = .center
+        
         return label
     }()
 
@@ -34,9 +45,9 @@ final class ViewController: UIViewController {
         let login = UITextField()
         login.placeholder = "login"
         login.font = UIFont.systemFont(ofSize: 30)
-        login.backgroundColor = .yellow
+        login.backgroundColor = .white
         login.textColor = .black
-        login.borderStyle = .line
+        login.borderStyle = .bezel
         return login
     }()
 
@@ -44,9 +55,9 @@ final class ViewController: UIViewController {
         let password = UITextField()
         password.placeholder = "password"
         password.font = UIFont.systemFont(ofSize: 30)
-        password.backgroundColor = .yellow
+        password.backgroundColor = .white
         password.textColor = .black
-        password.borderStyle = .line
+        password.borderStyle = .bezel
         // установка скрытого текста
         password.isSecureTextEntry = true
         return password
@@ -56,16 +67,17 @@ final class ViewController: UIViewController {
         let button = UIButton()
         button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
         button.setTitle("Enter", for: .normal)
-        button.setTitleColor(.yellow, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.setTitle("Signing", for:.highlighted)
-        button.backgroundColor = .black
-        
+//        button.backgroundColor = .cyan
+        button.setImage(UIImage(named: "ButtonEnter"), for: .normal)
+        button.contentMode = .scaleAspectFill
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
 
         setupImage()
         setupConstraints()
@@ -74,9 +86,11 @@ final class ViewController: UIViewController {
     private func setupImage() {
         view.addSubview(logoImage)
         view.addSubview(labelAutorization)
+        view.addSubview(autorizationImage)
         view.addSubview(loginField)
         view.addSubview(passwordField)
         view.addSubview(buttonEnter)
+        
     }
 
     private func setupConstraints() {
@@ -85,6 +99,7 @@ final class ViewController: UIViewController {
         loginField.translatesAutoresizingMaskIntoConstraints = false
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         buttonEnter.translatesAutoresizingMaskIntoConstraints = false
+        autorizationImage.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             // MARK: logoImage
@@ -93,32 +108,41 @@ final class ViewController: UIViewController {
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             logoImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 4),
-
+            
             // MARK: LabelAutorization
             labelAutorization.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 30),
             labelAutorization.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             labelAutorization.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             labelAutorization.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             labelAutorization.heightAnchor.constraint(equalToConstant: view.frame.size.height / 10),
+            
+            // MARK: AutorizationImage
+            autorizationImage.topAnchor.constraint(equalTo: labelAutorization.bottomAnchor, constant: 30),
+            autorizationImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            autorizationImage.leadingAnchor.constraint(equalTo: labelAutorization.leadingAnchor),
+            autorizationImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 7),
+            
 
             // MARK: LoginField
-            loginField.topAnchor.constraint(equalTo: labelAutorization.bottomAnchor, constant: 80),
+            loginField.topAnchor.constraint(equalTo: passwordField.topAnchor, constant: -60),
             loginField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             loginField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             loginField.heightAnchor.constraint(equalToConstant: view.frame.size.height / 20),
 
             // MARK: passwordField
-            passwordField.topAnchor.constraint(equalTo: loginField.bottomAnchor, constant: 20),
+//            passwordField.topAnchor.constraint(equalTo: loginField.bottomAnchor, constant: 20),
+            passwordField.bottomAnchor.constraint(equalTo: buttonEnter.topAnchor, constant: -40),
             passwordField.leadingAnchor.constraint(equalTo: loginField.leadingAnchor),
             passwordField.trailingAnchor.constraint(equalTo: loginField.trailingAnchor),
             passwordField.centerXAnchor.constraint(equalTo: loginField.centerXAnchor),
             passwordField.heightAnchor.constraint(equalTo: loginField.heightAnchor),
             
             //MARK: EnterButton
-            buttonEnter.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant:80),
-            buttonEnter.heightAnchor.constraint(equalToConstant: view.frame.size.height / 15),
-            buttonEnter.leadingAnchor.constraint(equalTo: passwordField.leadingAnchor, constant: 50),
-            buttonEnter.trailingAnchor.constraint(equalTo: passwordField.trailingAnchor, constant: -50)
+//            buttonEnter.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant:130),
+            buttonEnter.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            buttonEnter.heightAnchor.constraint(equalToConstant: view.frame.size.height / 8),
+            buttonEnter.leadingAnchor.constraint(equalTo: passwordField.leadingAnchor, constant: 110),
+            buttonEnter.trailingAnchor.constraint(equalTo: passwordField.trailingAnchor, constant: -110)
             
         ])
     }

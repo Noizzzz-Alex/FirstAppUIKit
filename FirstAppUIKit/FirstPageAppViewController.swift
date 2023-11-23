@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FirstPageAppViewController: UIViewController {
+class FirstPageAppViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
