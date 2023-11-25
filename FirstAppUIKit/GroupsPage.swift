@@ -1,13 +1,13 @@
 //
-//  FirstPageAppViewController.swift
+//  GroupsPage.swift
 //  FirstAppUIKit
 //
-//  Created by Александр Харлампов on 24.11.2023.
+//  Created by Александр Харлампов on 25.11.2023.
 //
 
 import UIKit
 
-class FirstPageAppViewController: UITabBarController {
+class GroupsPage: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

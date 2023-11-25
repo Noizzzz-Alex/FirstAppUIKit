@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1075E22C2B0FE1D700BDFD07 /* FirstPageAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075E22B2B0FE1D700BDFD07 /* FirstPageAppViewController.swift */; };
+		105813DB2B11FEB2007433FD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105813DA2B11FEB2007433FD /* CustomTableViewCell.swift */; };
+		1072FFDA2B11491900B8BFB4 /* FriendsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072FFD92B11491900B8BFB4 /* FriendsPage.swift */; };
+		1072FFDC2B11495500B8BFB4 /* GroupsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072FFDB2B11495500B8BFB4 /* GroupsPage.swift */; };
+		1072FFDE2B1149A100B8BFB4 /* PhotosPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072FFDD2B1149A100B8BFB4 /* PhotosPage.swift */; };
+		1075E22C2B0FE1D700BDFD07 /* StartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075E22B2B0FE1D700BDFD07 /* StartPage.swift */; };
 		10A4CAC42B0676B100BCCA13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAC32B0676B100BCCA13 /* AppDelegate.swift */; };
 		10A4CAC62B0676B100BCCA13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAC52B0676B100BCCA13 /* SceneDelegate.swift */; };
 		10A4CAC82B0676B100BCCA13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAC72B0676B100BCCA13 /* ViewController.swift */; };
@@ -35,7 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1075E22B2B0FE1D700BDFD07 /* FirstPageAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageAppViewController.swift; sourceTree = "<group>"; };
+		105813DA2B11FEB2007433FD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		1072FFD92B11491900B8BFB4 /* FriendsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPage.swift; sourceTree = "<group>"; };
+		1072FFDB2B11495500B8BFB4 /* GroupsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsPage.swift; sourceTree = "<group>"; };
+		1072FFDD2B1149A100B8BFB4 /* PhotosPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPage.swift; sourceTree = "<group>"; };
+		1075E22B2B0FE1D700BDFD07 /* StartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPage.swift; sourceTree = "<group>"; };
 		10A4CAC02B0676B100BCCA13 /* FirstAppUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstAppUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A4CAC32B0676B100BCCA13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10A4CAC52B0676B100BCCA13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,9 +106,13 @@
 			isa = PBXGroup;
 			children = (
 				10A4CAC32B0676B100BCCA13 /* AppDelegate.swift */,
+				105813DA2B11FEB2007433FD /* CustomTableViewCell.swift */,
 				10A4CAC52B0676B100BCCA13 /* SceneDelegate.swift */,
 				10A4CAC72B0676B100BCCA13 /* ViewController.swift */,
-				1075E22B2B0FE1D700BDFD07 /* FirstPageAppViewController.swift */,
+				1075E22B2B0FE1D700BDFD07 /* StartPage.swift */,
+				1072FFD92B11491900B8BFB4 /* FriendsPage.swift */,
+				1072FFDB2B11495500B8BFB4 /* GroupsPage.swift */,
+				1072FFDD2B1149A100B8BFB4 /* PhotosPage.swift */,
 				10A4CACC2B0676B200BCCA13 /* Assets.xcassets */,
 				10A4CAD12B0676B200BCCA13 /* Info.plist */,
 			);
@@ -253,8 +265,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1075E22C2B0FE1D700BDFD07 /* FirstPageAppViewController.swift in Sources */,
+				1075E22C2B0FE1D700BDFD07 /* StartPage.swift in Sources */,
 				10A4CAC82B0676B100BCCA13 /* ViewController.swift in Sources */,
+				105813DB2B11FEB2007433FD /* CustomTableViewCell.swift in Sources */,
+				1072FFDC2B11495500B8BFB4 /* GroupsPage.swift in Sources */,
+				1072FFDA2B11491900B8BFB4 /* FriendsPage.swift in Sources */,
+				1072FFDE2B1149A100B8BFB4 /* PhotosPage.swift in Sources */,
 				10A4CAC42B0676B100BCCA13 /* AppDelegate.swift in Sources */,
 				10A4CAC62B0676B100BCCA13 /* SceneDelegate.swift in Sources */,
 			);

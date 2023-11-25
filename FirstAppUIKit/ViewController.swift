@@ -18,28 +18,28 @@ final class ViewController: UIViewController {
         return imageView
     }()
     
-    private let autorizationImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .white
-        imageView.image = UIImage(named: "AutorizationImage")
+//    private let autorizationImage: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.backgroundColor = .white
+//        imageView.image = UIImage(named: "AutorizationImage")
+//
+//        // масштабирование, сохраняет соотношение сторон
+//        imageView.contentMode = .scaleAspectFit
+//        return imageView
+//    }()
 
-        // масштабирование, сохраняет соотношение сторон
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-
-    private let labelAutorization: UILabel = {
-        let label = UILabel()
-        label.text = "Wellcome, please sign in"
-
-        // установка размера шрифта для лейбла
-        label.font = UIFont.systemFont(ofSize: 30)
-//        label.backgroundColor = .cyan
-        label.textColor = .black
-        label.textAlignment = .center
-        
-        return label
-    }()
+//    private let labelAutorization: UILabel = {
+//        let label = UILabel()
+//        label.text = "Wellcome, please sign in"
+//
+//        // установка размера шрифта для лейбла
+//        label.font = UIFont.systemFont(ofSize: 30)
+////        label.backgroundColor = .cyan
+//        label.textColor = .black
+//        label.textAlignment = .center
+//        
+//        return label
+//    }()
 
     private let loginField: UITextField = {
         let login = UITextField()
@@ -81,12 +81,13 @@ final class ViewController: UIViewController {
 
         setupImage()
         setupConstraints()
+        buttonEnter.addTarget(StartPage(), action: #selector(goToNextScreen), for: .touchUpInside)
     }
 
     private func setupImage() {
         view.addSubview(logoImage)
-        view.addSubview(labelAutorization)
-        view.addSubview(autorizationImage)
+//        view.addSubview(labelAutorization)
+//        view.addSubview(autorizationImage)
         view.addSubview(loginField)
         view.addSubview(passwordField)
         view.addSubview(buttonEnter)
@@ -95,11 +96,11 @@ final class ViewController: UIViewController {
 
     private func setupConstraints() {
         logoImage.translatesAutoresizingMaskIntoConstraints = false
-        labelAutorization.translatesAutoresizingMaskIntoConstraints = false
+//        labelAutorization.translatesAutoresizingMaskIntoConstraints = false
         loginField.translatesAutoresizingMaskIntoConstraints = false
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         buttonEnter.translatesAutoresizingMaskIntoConstraints = false
-        autorizationImage.translatesAutoresizingMaskIntoConstraints = false
+//        autorizationImage.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             // MARK: logoImage
@@ -107,20 +108,20 @@ final class ViewController: UIViewController {
             logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            logoImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 4),
+            logoImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 3),
             
             // MARK: LabelAutorization
-            labelAutorization.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 30),
-            labelAutorization.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            labelAutorization.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            labelAutorization.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            labelAutorization.heightAnchor.constraint(equalToConstant: view.frame.size.height / 10),
+//            labelAutorization.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 5),
+//            labelAutorization.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            labelAutorization.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            labelAutorization.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            labelAutorization.heightAnchor.constraint(equalToConstant: view.frame.size.height / 10),
             
             // MARK: AutorizationImage
-            autorizationImage.topAnchor.constraint(equalTo: labelAutorization.bottomAnchor, constant: 30),
-            autorizationImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            autorizationImage.leadingAnchor.constraint(equalTo: labelAutorization.leadingAnchor),
-            autorizationImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 7),
+//            autorizationImage.topAnchor.constraint(equalTo: labelAutorization.bottomAnchor, constant: 30),
+//            autorizationImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            autorizationImage.leadingAnchor.constraint(equalTo: labelAutorization.leadingAnchor),
+//            autorizationImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 7),
             
 
             // MARK: LoginField
@@ -139,12 +140,18 @@ final class ViewController: UIViewController {
             
             //MARK: EnterButton
 //            buttonEnter.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant:130),
-            buttonEnter.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40),
+            buttonEnter.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
             buttonEnter.heightAnchor.constraint(equalToConstant: view.frame.size.height / 8),
             buttonEnter.leadingAnchor.constraint(equalTo: passwordField.leadingAnchor, constant: 110),
             buttonEnter.trailingAnchor.constraint(equalTo: passwordField.trailingAnchor, constant: -110)
             
         ])
+    }
+}
+// MARK: Objective-C Methods
+private extension ViewController{
+    @objc  func goToNextScreen() {
+        navigationController?.pushViewController(FriendsPage(), animated: true)
     }
 }
 
