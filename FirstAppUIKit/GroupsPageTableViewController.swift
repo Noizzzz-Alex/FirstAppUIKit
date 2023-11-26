@@ -1,5 +1,5 @@
 //
-//  FriendsPageViewController.swift
+//  GroupsPage.swift
 //  FirstAppUIKit
 //
 //  Created by Александр Харлампов on 25.11.2023.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class FriendsPage: UITableViewController {
+final class GroupsPageTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
             // #warning Incomplete implementation, return the number of sections
             
-            return 10
+            return 5
         }
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,9 +25,10 @@ class FriendsPage: UITableViewController {
         
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            CustomTableViewCell()
+            CustomGroupTableCell()
         }
 }
 #Preview{
-    FriendsPage()
+    FriendsPageTableViewController()
 }
+

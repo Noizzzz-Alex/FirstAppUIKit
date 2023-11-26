@@ -17,7 +17,7 @@ final class ViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
+
 //    private let autorizationImage: UIImageView = {
 //        let imageView = UIImageView()
 //        imageView.backgroundColor = .white
@@ -34,10 +34,10 @@ final class ViewController: UIViewController {
 //
 //        // установка размера шрифта для лейбла
 //        label.font = UIFont.systemFont(ofSize: 30)
-////        label.backgroundColor = .cyan
+    ////        label.backgroundColor = .cyan
 //        label.textColor = .black
 //        label.textAlignment = .center
-//        
+//
 //        return label
 //    }()
 
@@ -68,7 +68,7 @@ final class ViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
         button.setTitle("Enter", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.setTitle("Signing", for:.highlighted)
+        button.setTitle("Signing", for: .highlighted)
 //        button.backgroundColor = .cyan
         button.setImage(UIImage(named: "ButtonEnter"), for: .normal)
         button.contentMode = .scaleAspectFill
@@ -81,7 +81,7 @@ final class ViewController: UIViewController {
 
         setupImage()
         setupConstraints()
-        buttonEnter.addTarget(StartPage(), action: #selector(goToNextScreen), for: .touchUpInside)
+        buttonEnter.addTarget(StartPageTabBarController(), action: #selector(goToNextScreen), for: .touchUpInside)
     }
 
     private func setupImage() {
@@ -91,7 +91,6 @@ final class ViewController: UIViewController {
         view.addSubview(loginField)
         view.addSubview(passwordField)
         view.addSubview(buttonEnter)
-        
     }
 
     private func setupConstraints() {
@@ -109,51 +108,67 @@ final class ViewController: UIViewController {
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             logoImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 3),
-            
+
             // MARK: LabelAutorization
+
 //            labelAutorization.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 5),
 //            labelAutorization.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 //            labelAutorization.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 //            labelAutorization.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 //            labelAutorization.heightAnchor.constraint(equalToConstant: view.frame.size.height / 10),
-            
+
             // MARK: AutorizationImage
+
 //            autorizationImage.topAnchor.constraint(equalTo: labelAutorization.bottomAnchor, constant: 30),
 //            autorizationImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 //            autorizationImage.leadingAnchor.constraint(equalTo: labelAutorization.leadingAnchor),
 //            autorizationImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 7),
-            
 
             // MARK: LoginField
+
             loginField.topAnchor.constraint(equalTo: passwordField.topAnchor, constant: -60),
             loginField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             loginField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             loginField.heightAnchor.constraint(equalToConstant: view.frame.size.height / 20),
 
             // MARK: passwordField
+
 //            passwordField.topAnchor.constraint(equalTo: loginField.bottomAnchor, constant: 20),
             passwordField.bottomAnchor.constraint(equalTo: buttonEnter.topAnchor, constant: -40),
             passwordField.leadingAnchor.constraint(equalTo: loginField.leadingAnchor),
             passwordField.trailingAnchor.constraint(equalTo: loginField.trailingAnchor),
             passwordField.centerXAnchor.constraint(equalTo: loginField.centerXAnchor),
             passwordField.heightAnchor.constraint(equalTo: loginField.heightAnchor),
-            
-            //MARK: EnterButton
+
+            // MARK: EnterButton
+
 //            buttonEnter.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant:130),
             buttonEnter.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
             buttonEnter.heightAnchor.constraint(equalToConstant: view.frame.size.height / 8),
             buttonEnter.leadingAnchor.constraint(equalTo: passwordField.leadingAnchor, constant: 110),
-            buttonEnter.trailingAnchor.constraint(equalTo: passwordField.trailingAnchor, constant: -110)
-            
+            buttonEnter.trailingAnchor.constraint(equalTo: passwordField.trailingAnchor, constant: -110),
+
         ])
     }
+//    @objc func goToCollectionView() {
+//        navigationController?.pushViewController(
+//            PhotosPageCollectionViewController(
+//                collectionViewLayout: UICollectionViewFlowLayout()
+//            ),
+//            animated: true
+//        )
+//    }
 }
+
 // MARK: Objective-C Methods
-private extension ViewController{
-    @objc  func goToNextScreen() {
-        navigationController?.pushViewController(FriendsPage(), animated: true)
+
+private extension ViewController {
+    @objc func goToNextScreen() {
+        navigationController?.pushViewController(StartPageTabBarController(), animated: true)
     }
 }
+
+
 
 #Preview {
     ViewController()

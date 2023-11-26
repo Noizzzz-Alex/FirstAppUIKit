@@ -4,7 +4,7 @@
 //
 //  Created by Александр Харлампов on 16.11.2023.
 //
-
+//Thread 1: "UICollectionView must be initialized with a non-nil layout parameter"
 import UIKit
 
 @main

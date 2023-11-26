@@ -1,13 +1,13 @@
 //
-//  CustomTableViewCell.swift
+//  CustomGroupTableCell.swift
 //  FirstAppUIKit
 //
-//  Created by Александр Харлампов on 25.11.2023.
+//  Created by Александр Харлампов on 26.11.2023.
 //
 
 import UIKit
 
-final class CustomTableViewCell: UITableViewCell {
+class CustomGroupTableCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +22,7 @@ final class CustomTableViewCell: UITableViewCell {
 
         private var text1: UILabel = {
             let label = UILabel()
-            label.text = "Friend"
+            label.text = "Group"
             label.textColor = .black
             label.font = UIFont.systemFont(ofSize: 30)
             return label
@@ -62,5 +62,4 @@ final class CustomTableViewCell: UITableViewCell {
                 
             ])
         }
-
 }
