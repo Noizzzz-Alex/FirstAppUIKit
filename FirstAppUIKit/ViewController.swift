@@ -46,7 +46,15 @@ final class ViewController: UIViewController {
         button.setTitle("Enter", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.setTitle("Signing", for: .highlighted)
-//        button.backgroundColor = .cyan
+        //установка тени для кнопки
+        //цвет тени
+        button.layer.shadowColor = UIColor.black.cgColor
+        //смещение тени по горизонтали(width) и вертикали (height)
+        button.layer.shadowOffset = CGSize(width: 2, height: 2)
+        //непрозрачность тени
+        button.layer.shadowOpacity = 0.7
+        //радиус размытия
+        button.layer.shadowRadius = 3
         button.setImage(UIImage(named: "ButtonEnter"), for: .normal)
         button.contentMode = .scaleAspectFill
         return button
@@ -64,8 +72,6 @@ final class ViewController: UIViewController {
 
     private func setupImage() {
         view.addSubview(logoImage)
-//        view.addSubview(labelAutorization)
-//        view.addSubview(autorizationImage)
         view.addSubview(loginField)
         view.addSubview(passwordField)
         view.addSubview(buttonEnter)
@@ -73,11 +79,9 @@ final class ViewController: UIViewController {
 
     private func setupConstraints() {
         logoImage.translatesAutoresizingMaskIntoConstraints = false
-//        labelAutorization.translatesAutoresizingMaskIntoConstraints = false
         loginField.translatesAutoresizingMaskIntoConstraints = false
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         buttonEnter.translatesAutoresizingMaskIntoConstraints = false
-//        autorizationImage.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             // MARK: logoImage
@@ -86,21 +90,6 @@ final class ViewController: UIViewController {
             logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             logoImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 3),
-
-            // MARK: LabelAutorization
-
-//            labelAutorization.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 5),
-//            labelAutorization.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            labelAutorization.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            labelAutorization.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            labelAutorization.heightAnchor.constraint(equalToConstant: view.frame.size.height / 10),
-
-            // MARK: AutorizationImage
-
-//            autorizationImage.topAnchor.constraint(equalTo: labelAutorization.bottomAnchor, constant: 30),
-//            autorizationImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            autorizationImage.leadingAnchor.constraint(equalTo: labelAutorization.leadingAnchor),
-//            autorizationImage.heightAnchor.constraint(equalToConstant: view.frame.size.height / 7),
 
             // MARK: LoginField
 
@@ -111,7 +100,6 @@ final class ViewController: UIViewController {
 
             // MARK: passwordField
 
-//            passwordField.topAnchor.constraint(equalTo: loginField.bottomAnchor, constant: 20),
             passwordField.bottomAnchor.constraint(equalTo: buttonEnter.topAnchor, constant: -40),
             passwordField.leadingAnchor.constraint(equalTo: loginField.leadingAnchor),
             passwordField.trailingAnchor.constraint(equalTo: loginField.trailingAnchor),
@@ -119,8 +107,6 @@ final class ViewController: UIViewController {
             passwordField.heightAnchor.constraint(equalTo: loginField.heightAnchor),
 
             // MARK: EnterButton
-
-//            buttonEnter.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant:130),
             buttonEnter.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
             buttonEnter.heightAnchor.constraint(equalToConstant: view.frame.size.height / 8),
             buttonEnter.leadingAnchor.constraint(equalTo: passwordField.leadingAnchor, constant: 110),
@@ -128,14 +114,6 @@ final class ViewController: UIViewController {
 
         ])
     }
-//    @objc func goToCollectionView() {
-//        navigationController?.pushViewController(
-//            PhotosPageCollectionViewController(
-//                collectionViewLayout: UICollectionViewFlowLayout()
-//            ),
-//            animated: true
-//        )
-//    }
 }
 
 // MARK: Objective-C Methods
