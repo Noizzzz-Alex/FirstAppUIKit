@@ -18,29 +18,6 @@ final class ViewController: UIViewController {
         return imageView
     }()
 
-//    private let autorizationImage: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.backgroundColor = .white
-//        imageView.image = UIImage(named: "AutorizationImage")
-//
-//        // масштабирование, сохраняет соотношение сторон
-//        imageView.contentMode = .scaleAspectFit
-//        return imageView
-//    }()
-
-//    private let labelAutorization: UILabel = {
-//        let label = UILabel()
-//        label.text = "Wellcome, please sign in"
-//
-//        // установка размера шрифта для лейбла
-//        label.font = UIFont.systemFont(ofSize: 30)
-    ////        label.backgroundColor = .cyan
-//        label.textColor = .black
-//        label.textAlignment = .center
-//
-//        return label
-//    }()
-
     private let loginField: UITextField = {
         let login = UITextField()
         login.placeholder = "login"
@@ -67,7 +44,7 @@ final class ViewController: UIViewController {
         let button = UIButton()
         button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
         button.setTitle("Enter", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.setTitle("Signing", for: .highlighted)
 //        button.backgroundColor = .cyan
         button.setImage(UIImage(named: "ButtonEnter"), for: .normal)

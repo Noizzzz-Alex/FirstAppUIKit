@@ -10,6 +10,10 @@ import UIKit
 final class FriendsPageTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
