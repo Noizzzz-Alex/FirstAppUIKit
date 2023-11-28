@@ -11,6 +11,9 @@ final class StartPageTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         generateTabBar()
+        tabBar.tintColor = .systemPink
+        tabBar.barTintColor = .black
+        
     }
 
     
