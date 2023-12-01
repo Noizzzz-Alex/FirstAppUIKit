@@ -8,11 +8,13 @@
 import UIKit
 
 final class StartPageTabBarController: UITabBarController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        generateTabBar()
         tabBar.tintColor = .systemPink
-        tabBar.barTintColor = .black
+        generateTabBar()
+        
+        
         
     }
 
@@ -22,14 +24,16 @@ final class StartPageTabBarController: UITabBarController {
             
             generateViewController(viewController: FriendsPageTableViewController(), imageName: "friends", title: "Friends", largeTitle: true),
             generateViewController(viewController: GroupsPageTableViewController(), imageName: "groups", title: "Groups", largeTitle: true),
-            generateViewController(viewController: PhotosPageCollectionViewController(collectionViewLayout: .init()), imageName: "photos", title: "Photos", largeTitle: true)
+            generateViewController(viewController: PhotosPageCollectionViewController(collectionViewLayout: .init()), imageName: "photos", title: "Photos", largeTitle: true),
+            generateViewController(viewController: 
+                VKViewController(), imageName: "vk", title: "VK", largeTitle: false)
             
         ]
     }
-//    resizeImage(image: UIImage(named: "photos") ?? UIImage(), size: 30))
     //метод для генерации контроллеров
         private func generateViewController(
             viewController: UIViewController, imageName: String, title: String, largeTitle: Bool) -> UIViewController {
+                
             //оборачиваем контроллер в навигешн контроллер
             let controller = UINavigationController(rootViewController: viewController)
             
@@ -45,6 +49,8 @@ final class StartPageTabBarController: UITabBarController {
             controller.navigationBar.prefersLargeTitles = largeTitle
             return controller
         }
+    
+    
     func resizeImage(image: UIImage, size: CGFloat) -> UIImage? {
         let newSize = CGSize(width: size, height: size)
         UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)

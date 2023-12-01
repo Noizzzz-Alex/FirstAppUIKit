@@ -12,7 +12,7 @@ final class CustomTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     private var circle: UIView = {
             let circle = UIView()
             circle.backgroundColor = .systemFill
@@ -39,12 +39,14 @@ final class CustomTableViewCell: UITableViewCell {
         }
         
         private func setupViews() {
+            
             contentView.addSubview(circle)
             contentView.addSubview(text1)
             setupConstraints()
         }
         
         private func setupConstraints(){
+            contentView.translatesAutoresizingMaskIntoConstraints = false
             circle.translatesAutoresizingMaskIntoConstraints = false
             text1.translatesAutoresizingMaskIntoConstraints = false
             

@@ -8,13 +8,13 @@
 import UIKit
 
 final class FriendsPageTableViewController: UITableViewController {
+    let networkService = NetworkService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
+        networkService.getFriends()
+
     }
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -30,6 +30,7 @@ final class FriendsPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         CustomTableViewCell()
     }
+
 }
 
 #Preview {

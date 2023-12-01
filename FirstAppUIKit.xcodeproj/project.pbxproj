@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		102968992B191D140036CD70 /* VKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102968982B191D140036CD70 /* VKViewController.swift */; };
+		1029689C2B191E3F0036CD70 /* VKViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1029689B2B191E3F0036CD70 /* VKViewController + Extension.swift */; };
+		1029689F2B1958D70036CD70 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1029689E2B1958D70036CD70 /* Token.swift */; };
+		102968A22B195AA40036CD70 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102968A12B195AA40036CD70 /* NetworkService.swift */; };
+		102968A52B1A1FB10036CD70 /* ModelFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102968A42B1A1FB10036CD70 /* ModelFriend.swift */; };
+		102968A82B1A34200036CD70 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102968A72B1A34200036CD70 /* Constants.swift */; };
 		105813DB2B11FEB2007433FD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105813DA2B11FEB2007433FD /* CustomTableViewCell.swift */; };
 		105813DD2B121CD8007433FD /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105813DC2B121CD8007433FD /* CustomCollectionViewCell.swift */; };
 		105813DF2B122372007433FD /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105813DE2B122372007433FD /* ImageViewController.swift */; };
@@ -42,6 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		102968982B191D140036CD70 /* VKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKViewController.swift; sourceTree = "<group>"; };
+		1029689B2B191E3F0036CD70 /* VKViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VKViewController + Extension.swift"; sourceTree = "<group>"; };
+		1029689E2B1958D70036CD70 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		102968A12B195AA40036CD70 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		102968A42B1A1FB10036CD70 /* ModelFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFriend.swift; sourceTree = "<group>"; };
+		102968A72B1A34200036CD70 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		105813DA2B11FEB2007433FD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		105813DC2B121CD8007433FD /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		105813DE2B122372007433FD /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +100,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1029689A2B191E0C0036CD70 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1029689B2B191E3F0036CD70 /* VKViewController + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1029689D2B1958BC0036CD70 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				1029689E2B1958D70036CD70 /* Token.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		102968A02B195A8B0036CD70 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				102968A12B195AA40036CD70 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		102968A32B195B130036CD70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				102968A42B1A1FB10036CD70 /* ModelFriend.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		102968A62B1A33FD0036CD70 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				102968A72B1A34200036CD70 /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		10A4CAB72B0676B100BCCA13 = {
 			isa = PBXGroup;
 			children = (
@@ -111,9 +163,15 @@
 		10A4CAC22B0676B100BCCA13 /* FirstAppUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				102968A62B1A33FD0036CD70 /* Resources */,
+				102968A32B195B130036CD70 /* Models */,
+				102968A02B195A8B0036CD70 /* Services */,
+				1029689D2B1958BC0036CD70 /* Token */,
+				1029689A2B191E0C0036CD70 /* Extensions */,
 				10A4CAC32B0676B100BCCA13 /* AppDelegate.swift */,
 				105813DA2B11FEB2007433FD /* CustomTableViewCell.swift */,
 				107CB55A2B12D5EE00A7A781 /* CustomGroupTableCell.swift */,
+				102968982B191D140036CD70 /* VKViewController.swift */,
 				105813DC2B121CD8007433FD /* CustomCollectionViewCell.swift */,
 				105813DE2B122372007433FD /* ImageViewController.swift */,
 				10A4CAC52B0676B100BCCA13 /* SceneDelegate.swift */,
@@ -274,15 +332,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1029689C2B191E3F0036CD70 /* VKViewController + Extension.swift in Sources */,
+				102968A82B1A34200036CD70 /* Constants.swift in Sources */,
+				1029689F2B1958D70036CD70 /* Token.swift in Sources */,
 				1075E22C2B0FE1D700BDFD07 /* StartPageTabBarController.swift in Sources */,
 				105813DD2B121CD8007433FD /* CustomCollectionViewCell.swift in Sources */,
 				105813DF2B122372007433FD /* ImageViewController.swift in Sources */,
+				102968A52B1A1FB10036CD70 /* ModelFriend.swift in Sources */,
 				107CB55B2B12D5EE00A7A781 /* CustomGroupTableCell.swift in Sources */,
 				10A4CAC82B0676B100BCCA13 /* ViewController.swift in Sources */,
 				105813DB2B11FEB2007433FD /* CustomTableViewCell.swift in Sources */,
 				1072FFDC2B11495500B8BFB4 /* GroupsPageTableViewController.swift in Sources */,
 				1072FFDA2B11491900B8BFB4 /* FriendsPageTableViewController.swift in Sources */,
+				102968A22B195AA40036CD70 /* NetworkService.swift in Sources */,
 				1072FFDE2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift in Sources */,
+				102968992B191D140036CD70 /* VKViewController.swift in Sources */,
 				10A4CAC42B0676B100BCCA13 /* AppDelegate.swift in Sources */,
 				10A4CAC62B0676B100BCCA13 /* SceneDelegate.swift in Sources */,
 			);
