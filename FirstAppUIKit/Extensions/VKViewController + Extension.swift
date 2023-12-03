@@ -9,6 +9,8 @@ import Foundation
 import WebKit
 
 extension ViewController: WKNavigationDelegate {
+    
+    //1-й вариант написания
 //    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
 //        guard let url = navigationResponse.response.url, url.path == "/blank.html", let fragment = url.fragment else {
 //            decisionHandler(.allow)
@@ -29,12 +31,13 @@ extension ViewController: WKNavigationDelegate {
 //        webView.removeFromSuperview()
     ////        tap()
 //    }
+    
+    //2-й вариант написания
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let url = webView.url,
               let fragment = url.fragment,
               let token = extractToken(from: fragment) else { return }
 
-        // Сохраняем токен в переменную или выполняем нужные действия
         NetworkService.token = token
         print("Токен: \(NetworkService.token)")
     }
