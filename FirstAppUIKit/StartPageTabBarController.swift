@@ -15,18 +15,17 @@ final class StartPageTabBarController: UITabBarController {
         generateTabBar()
         
         
-        
     }
 
     
     private func generateTabBar() {
         viewControllers = [
-            
+            generateViewController(viewController:
+                VKViewController(), imageName: "vk", title: "VK", largeTitle: false),
             generateViewController(viewController: FriendsPageTableViewController(), imageName: "friends", title: "Friends", largeTitle: true),
             generateViewController(viewController: GroupsPageTableViewController(), imageName: "groups", title: "Groups", largeTitle: true),
-            generateViewController(viewController: PhotosPageCollectionViewController(collectionViewLayout: .init()), imageName: "photos", title: "Photos", largeTitle: true),
-            generateViewController(viewController: 
-                VKViewController(), imageName: "vk", title: "VK", largeTitle: false)
+            generateViewController(viewController: PhotosPageCollectionViewController(collectionViewLayout: .init()), imageName: "photos", title: "Photos", largeTitle: true)
+            
             
         ]
     }

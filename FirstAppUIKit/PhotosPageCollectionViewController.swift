@@ -8,7 +8,7 @@
 import UIKit
 
 class PhotosPageCollectionViewController: UICollectionViewController {
-    
+    let request = NetworkService()
     private let reuseIdentifier = "Cell"
     
     override init(collectionViewLayout layout: UICollectionViewLayout) {
@@ -26,6 +26,7 @@ class PhotosPageCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         collectionView!.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        request.getPhotos()
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
