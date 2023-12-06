@@ -11,6 +11,7 @@ import WebKit
 class VKViewController: UIViewController {
     private lazy var webView: WKWebView = {
         let webView = WKWebView(frame: view.bounds)
+        webView.navigationDelegate = self
         return webView
     }()
 

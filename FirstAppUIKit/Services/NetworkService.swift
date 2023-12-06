@@ -12,7 +12,7 @@ final class NetworkService {
     private let session = URLSession.shared
     
     //VkApps скрыт от Гит
-    static let request = "https://oauth.vk.com/authorize?client_id=51805697&scope=notify,photos,friends,audio,video,notes,pages,docs,status,questions,offers,wall,groups,messages,notifications,stats,ads,offline&redirect_uri=http://api.vk.com/blank.html&display=mobile&response_type=token"
+    static var request = "https://oauth.vk.com/authorize?client_id=51805697&scope=notify,photos,friends,audio,video,notes,pages,docs,status,questions,offers,wall,groups,messages,notifications,stats,ads,offline&redirect_uri=http://api.vk.com/blank.html&display=mobile&response_type=token"
     
     
     func getFriends() {

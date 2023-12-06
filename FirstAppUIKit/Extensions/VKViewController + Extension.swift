@@ -8,7 +8,7 @@
 import Foundation
 import WebKit
 
-extension ViewController: WKNavigationDelegate {
+extension VKViewController: WKNavigationDelegate {
     
     //1-й вариант написания
 //    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
