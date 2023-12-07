@@ -39,15 +39,15 @@ final class NetworkService {
         }.resume()
     }
     
-    // func getPhotos(completion: @escaping ([Photo]) -> Void) {
-    //        guard let url = URL(string: "https://api.vk.com/method/photos.get?access_token=\(NetworkService.token)&v=5.199&&album_id=profile&count=10") else { return }
-    //
-    //        session.dataTask(with: url) { (data, _, error) in
-    //            guard let data = data else { return }
-    //            do {
-    //                let photos = try JSONDecoder().decode(PhotosModel.self, from: data).response.items
-    //                completion(photos ?? [])
-    //            } catch { print(error) }
-    //        }.resume()
-    //    }
+     func getPhotos(completion: @escaping ([Photo]) -> Void) {
+            guard let url = URL(string: "https://api.vk.com/method/photos.get?access_token=\(NetworkService.token)&v=5.199&&album_id=profile&count=10") else { return }
+    
+            session.dataTask(with: url) { (data, _, error) in
+                guard let data = data else { return }
+                do {
+                    let photos = try JSONDecoder().decode(PhotoModel.self, from: data).response.items
+                    completion(photos ?? [])
+                } catch { print(error) }
+            }.resume()
+        }
 }

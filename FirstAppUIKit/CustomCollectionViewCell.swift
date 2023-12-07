@@ -11,7 +11,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     var tap: ((UIImage) -> Void)? // замыкание, принимающее на вход картинку при тапу
 
     // UIImageView это контейнер для картинки, чтобы картинку можно было положить на вью.Внутрь контейнера передаем картинку
-    private var imageView = UIImageView(image: UIImage(named: "Image 1"))
+    private var imageView = UIImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +25,18 @@ class CustomCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    func updateCell(model: Photo) {
+            DispatchQueue.global().async {
+                if let url = URL(string: model.sizes[1].url ),
+                   let data = try? Data(contentsOf: url)
+                {
+                    DispatchQueue.main.async {
+                        self.imageView.image = UIImage(data: data)
+                    }
+                }
+            }
+        }
+    
 
 
     private func setupViews(){
@@ -45,8 +57,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     @objc func cellTap(){
         tap?(imageView.image ?? UIImage())
     }
-
-    
-    
-    
+}
+#Preview{
+    CustomCollectionViewCell()
 }
