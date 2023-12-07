@@ -30,6 +30,7 @@
 		10A4CADB2B0676B200BCCA13 /* FirstAppUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CADA2B0676B200BCCA13 /* FirstAppUIKitTests.swift */; };
 		10A4CAE52B0676B200BCCA13 /* FirstAppUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAE42B0676B200BCCA13 /* FirstAppUIKitUITests.swift */; };
 		10A4CAE72B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAE62B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift */; };
+		10F89C4F2B2114AC00E392FC /* FuncUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F89C4E2B2114AC00E392FC /* FuncUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		10A4CAE02B0676B200BCCA13 /* FirstAppUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A4CAE42B0676B200BCCA13 /* FirstAppUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUIKitUITests.swift; sourceTree = "<group>"; };
 		10A4CAE62B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10F89C4E2B2114AC00E392FC /* FuncUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				102968A72B1A34200036CD70 /* Constants.swift */,
+				10F89C4E2B2114AC00E392FC /* FuncUI.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			files = (
 				1029689C2B191E3F0036CD70 /* VKViewController + Extension.swift in Sources */,
 				102968A82B1A34200036CD70 /* Constants.swift in Sources */,
+				10F89C4F2B2114AC00E392FC /* FuncUI.swift in Sources */,
 				1029689F2B1958D70036CD70 /* VkApps.swift in Sources */,
 				1075E22C2B0FE1D700BDFD07 /* StartPageTabBarController.swift in Sources */,
 				105813DD2B121CD8007433FD /* CustomCollectionViewCell.swift in Sources */,

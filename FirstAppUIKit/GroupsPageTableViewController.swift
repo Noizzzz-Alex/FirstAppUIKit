@@ -11,7 +11,7 @@ final class GroupsPageTableViewController: UITableViewController {
     let request = NetworkService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        request.getGroups()
+//        request.getGroups()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

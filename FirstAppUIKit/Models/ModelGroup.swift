@@ -8,11 +8,11 @@
 import Foundation
 
 
-struct GroupResponse: Decodable {
-    let response: ResponseData
+struct ModelGroup: Decodable {
+    let response: GroupData
 }
 
-struct ResponseData: Decodable {
+struct GroupData: Decodable {
     let items: [Group]
 }
 

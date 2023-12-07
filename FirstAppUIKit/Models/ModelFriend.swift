@@ -7,25 +7,27 @@
 
 import Foundation
 
-struct FriendsResponse: Decodable {
+struct ModelFriend: Decodable {
     let response: FriendsData
 }
 
 struct FriendsData: Decodable {
     let count: Int
-    let items: [User]
+    let items: [Friend]
 }
 
-struct User: Decodable {
+struct Friend: Decodable {
     
     let firstName: String
     let lastName: String
-    let photo100: String
+    let photo: String
+    let online: Int
 
     private enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
         case lastName = "last_name"
-        case photo100 = "photo_100"
+        case photo = "photo_50"
+        case online
     }
 }
 
