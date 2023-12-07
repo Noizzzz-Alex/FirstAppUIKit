@@ -44,9 +44,6 @@ class CustomTableViewCell: UITableViewCell {
         }
     }
 
-    func updateCell(model: Friend) {
-    }
-
     private func setupViews() {
         contentView.addSubview(userPhoto)
         contentView.addSubview(onlineFlag)
@@ -101,6 +98,6 @@ class CustomTableViewCell: UITableViewCell {
     }
 }
 
-// #Preview(){
-//    CustomTableViewCell()
-// }
+ #Preview(){
+    CustomTableViewCell()
+ }

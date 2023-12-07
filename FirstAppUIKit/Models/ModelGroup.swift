@@ -18,10 +18,12 @@ struct GroupData: Decodable {
 
 struct Group: Decodable {
     let name: String
+    let description: String
     let photo: String
 
     enum CodingKeys: String, CodingKey {
         case name
-        case photo = "photo_100"
+        case description
+        case photo = "photo_50"
     }
 }

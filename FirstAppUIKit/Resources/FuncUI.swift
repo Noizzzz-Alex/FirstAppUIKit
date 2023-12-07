@@ -15,6 +15,8 @@ struct Labels {
         label.font = UIFont.systemFont(ofSize: fontSize)
         label.textAlignment = textAlignment
         label.textColor = textColor
+        label.numberOfLines = 0 // автоматический перенос текста
+        label.lineBreakMode = .byWordWrapping // перенос по словам
         return label
     }
 }
@@ -27,3 +29,4 @@ struct CircleViews {
         return circle
     }
 }
+

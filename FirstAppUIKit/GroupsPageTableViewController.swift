@@ -8,27 +8,36 @@
 import UIKit
 
 final class GroupsPageTableViewController: UITableViewController {
-    let request = NetworkService()
+    let networkService = NetworkService()
+    var groups = [Group]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        request.getGroups()
+        tableView.register(CustomGroupTableCell.self, forCellReuseIdentifier: CustomGroupTableCell.identifier)
+        networkService.getGroups { [weak self] groups in
+            self?.groups = groups
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groups.count
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-            return 5
-        }
-
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            // #warning Incomplete implementation, return number of rows
-            1
-        }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            CustomGroupTableCell()
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: CustomGroupTableCell.identifier,
+            for: indexPath) as? CustomGroupTableCell else {
+                return UITableViewCell()
         }
+        cell.configureCell(groups: groups[indexPath.row])
+        return cell
+    }
 }
-#Preview{
-    GroupsPageTableViewController()
-}
+//#Preview{
+//    GroupsPageTableViewController()
+//}
 

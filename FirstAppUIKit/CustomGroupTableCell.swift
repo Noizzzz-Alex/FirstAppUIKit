@@ -8,31 +8,17 @@
 import UIKit
 
 class CustomGroupTableCell: UITableViewCell {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    private var labelSecond = UILabel()
-    private var circle: UIView = {
-        let circle = UIView()
-        circle.backgroundColor = .systemFill
-        circle.layer.cornerRadius = 25
-        return circle
-    }()
+    
+    static let identifier = "GroupCell"
+    private var labelHigh = Labels.createLabel(text: "Text_1", fontSize: 25, textAlignment: .natural, textColor: .black)
+    private var labelLow = Labels.createLabel(text: "Text_3", fontSize: 10, textAlignment: .natural, textColor: .black)
+    
+    private var groupPhoto = UIImageView()
+    
 
-    private let labelFirst: UILabel = {
-            let label = UILabel()
-            label.text = "Group"
-            label.textAlignment = .natural
-            label.textColor = .black
-            label.font = UIFont.systemFont(ofSize: 30)
-            return label
-        }()
-    //MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .white
-        labelSecond = generateLabel(text: "Description", aligment: .natural, color: .black, fontSize: 20)
-        contentView.addSubview(labelSecond)
+
         setupViews()
     }
 
@@ -40,40 +26,54 @@ class CustomGroupTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupViews() {
-        contentView.addSubview(circle)
-        contentView.addSubview(labelFirst)
-        contentView.addSubview(labelSecond)
-        setupConstraints()
-    }
-    private func generateLabel(text: String, aligment: NSTextAlignment, color: UIColor, fontSize: CGFloat) -> UILabel {
-        let label = UILabel()
-        label.text = text
-        label.textAlignment = aligment
-        label.textColor = color
-        label.font = UIFont.systemFont(ofSize: fontSize)
-        return label
+    func configureCell(groups: Group) {
+        labelHigh.text = groups.name
+        labelLow.text = groups.description
+        DispatchQueue.global().async {
+            if let url = URL(string: groups.photo),
+               let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    self.groupPhoto.image = UIImage(data: data)
+                }
+            }
+        }
     }
 
-    private func setupConstraints() {
-        circle.translatesAutoresizingMaskIntoConstraints = false
-        labelFirst.translatesAutoresizingMaskIntoConstraints = false
-        labelSecond.translatesAutoresizingMaskIntoConstraints = false
+    private func setupViews() {
+        contentView.addSubview(groupPhoto)
+        contentView.addSubview(labelHigh)
+        contentView.addSubview(labelLow)
+        setupConstraintsCell()
+    }
+
+    private func setupConstraintsCell() {
+        groupPhoto.translatesAutoresizingMaskIntoConstraints = false
+        labelHigh.translatesAutoresizingMaskIntoConstraints = false
+        labelLow.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            circle.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            circle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            circle.heightAnchor.constraint(equalToConstant: 50),
-            circle.widthAnchor.constraint(equalToConstant: 50),
-            labelFirst.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            labelFirst.leadingAnchor.constraint(equalTo: circle.trailingAnchor, constant: 30),
-            labelFirst.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
-            labelSecond.topAnchor.constraint(equalTo: labelFirst.bottomAnchor, constant: 10),
-            labelSecond.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            labelSecond.leadingAnchor.constraint(equalTo: labelFirst.leadingAnchor),
-            labelSecond.trailingAnchor.constraint(equalTo: labelFirst.trailingAnchor)
+            // MARK: GROUP PHOTO
+            groupPhoto.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 20),
+            groupPhoto.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            groupPhoto.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            groupPhoto.heightAnchor.constraint(equalToConstant: 50),
+            groupPhoto.widthAnchor.constraint(equalToConstant: 50),
+
+            // MARK: LABEL HIGH
+
+            labelHigh.topAnchor.constraint(equalTo: groupPhoto.topAnchor),
+            labelHigh.leadingAnchor.constraint(equalTo: groupPhoto.trailingAnchor, constant: 20),
+            labelHigh.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 5),
             
+            // MARK: LABEL LOW
+            labelLow.topAnchor.constraint(equalTo: labelHigh.bottomAnchor,constant: 10),
+            labelLow.leadingAnchor.constraint(equalTo: labelHigh.leadingAnchor),
+            labelLow.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            labelLow.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
 
         ])
     }
+}
+#Preview{
+    CustomGroupTableCell()
 }
