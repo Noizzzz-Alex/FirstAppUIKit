@@ -20,8 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // первый экран, корневой
 //        let navigationController = UINavigationController(rootViewController: StartPageTabBarController())
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = StartPageTabBarController()
-        window?.windowLevel = UIWindow.Level.statusBar + 1
+        window?.rootViewController = VKViewController()
         window?.makeKeyAndVisible()
                 
             

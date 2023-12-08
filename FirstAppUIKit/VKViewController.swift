@@ -27,16 +27,8 @@ class VKViewController: UIViewController {
     }
 
     
-
-    
-    
-    
-    
-    
- 
-    
-    
 }
+
 #Preview {
     VKViewController()
 }

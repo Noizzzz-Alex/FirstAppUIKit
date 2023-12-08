@@ -15,12 +15,9 @@ final class StartPageTabBarController: UITabBarController {
         generateTabBar()        
         
     }
-
     
     private func generateTabBar() {
         viewControllers = [
-            generateViewController(viewController:
-                VKViewController(), imageName: "vk", title: "VK", largeTitle: false),
             generateViewController(viewController: FriendsPageTableViewController(), imageName: "friends", title: "Friends", largeTitle: true),
             generateViewController(viewController: GroupsPageTableViewController(), imageName: "groups", title: "Groups", largeTitle: true),
             generateViewController(viewController: PhotosPageCollectionViewController(collectionViewLayout: .init()), imageName: "photos", title: "Photos", largeTitle: true)
@@ -47,16 +44,6 @@ final class StartPageTabBarController: UITabBarController {
             controller.navigationBar.prefersLargeTitles = largeTitle
             return controller
         }
-    
-    
-    func resizeImage(image: UIImage, size: CGFloat) -> UIImage? {
-        let newSize = CGSize(width: size, height: size)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
-        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return resizedImage
-    }
 }
 
 #Preview {
