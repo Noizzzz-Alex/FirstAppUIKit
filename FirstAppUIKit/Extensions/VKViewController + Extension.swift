@@ -12,19 +12,20 @@ extension VKViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let url = webView.url,
               let fragment = url.fragment,
-              let token = extractToken(from: fragment) else { return }
+              let token = extractToken(from: fragment, extractingString: "access_token"),
+              let userId = extractToken(from: fragment, extractingString: "user_id") else { return }
 
         NetworkService.token = token
-        print("Токен: \(NetworkService.token)")
+        NetworkService.userId = userId
         transitionToTabBarController()
     }
 
-    private func extractToken(from fragment: String) -> String? {
+    private func extractToken(from fragment: String, extractingString: String) -> String? {
         let components = fragment.components(separatedBy: "&")
 
         for component in components {
             let keyValue = component.components(separatedBy: "=")
-            if keyValue.count == 2 && keyValue[0] == "access_token" {
+            if keyValue.count == 2 && keyValue[0] == extractingString {
                 return keyValue[1]
             }
         }
@@ -32,26 +33,12 @@ extension VKViewController: WKNavigationDelegate {
         return nil
     }
 
-    private func tap() {
-        let tabBarVC = UINavigationController(rootViewController: StartPageTabBarController())
-
-        func goTabController() {
-            navigationController?.pushViewController(tabBarVC, animated: true)
-            navigationController?.isNavigationBarHidden = true
-        }
-        goTabController()
-
-        //        guard let scene1 = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-        //              let window1 = scene1.windows.first else { return }
-        //        window1.rootViewController = tabTabController
-    }
-
     func transitionToTabBarController() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first else {
             return
         }
-        window.rootViewController = StartPageTabBarController() //зесь уже имеющийся tabbarcontroller
+        window.rootViewController = StartPageTabBarController()
         window.makeKeyAndVisible()
     }
 }

@@ -14,10 +14,10 @@ class CustomTableViewCell: UITableViewCell {
     }
 
     private var userPhoto = UIImageView()
-    private var onlineFlag = CircleViews.createCircleUIView(color: .blue, radius: 5)
-    private var labelHigh = Labels.createLabel(text: "Text_1", fontSize: 25, textAlignment: .natural, textColor: .black)
-    private var labelMiddle = Labels.createLabel(text: "Text_2", fontSize: 25, textAlignment: .natural, textColor: .black)
-    private var labelLow = Labels.createLabel(text: "Text_3", fontSize: 20, textAlignment: .natural, textColor: .black)
+    private var onlineFlag = CircleViews.createCircleUIView(color: .blue, radius: 0)
+    private var labelHigh = Labels.createLabel(text: "Text_1", fontSize: 25, textAlignment: .natural, textColor: .black, userBorderColor: .white, borderWidth: 0, cornerRadius: 0)
+    private var labelMiddle = Labels.createLabel(text: "Text_2", fontSize: 25, textAlignment: .natural, textColor: .black, userBorderColor: .black, borderWidth: 0, cornerRadius: 0)
+    private var labelLow = Labels.createLabel(text: "Text_3", fontSize: 25, textAlignment: .natural, textColor: .black, userBorderColor: .white, borderWidth: 0, cornerRadius: 0)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

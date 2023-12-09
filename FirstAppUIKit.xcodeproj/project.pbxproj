@@ -29,6 +29,8 @@
 		10A4CADB2B0676B200BCCA13 /* FirstAppUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CADA2B0676B200BCCA13 /* FirstAppUIKitTests.swift */; };
 		10A4CAE52B0676B200BCCA13 /* FirstAppUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAE42B0676B200BCCA13 /* FirstAppUIKitUITests.swift */; };
 		10A4CAE72B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAE62B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift */; };
+		10C591C52B24AA33008493A3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C591C42B24AA33008493A3 /* UserModel.swift */; };
+		10C591C72B24ADD5008493A3 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C591C62B24ADD5008493A3 /* UserPageViewController.swift */; };
 		10F89C4F2B2114AC00E392FC /* FuncUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F89C4E2B2114AC00E392FC /* FuncUI.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		10A4CAE02B0676B200BCCA13 /* FirstAppUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A4CAE42B0676B200BCCA13 /* FirstAppUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUIKitUITests.swift; sourceTree = "<group>"; };
 		10A4CAE62B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10C591C42B24AA33008493A3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		10C591C62B24ADD5008493A3 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		10F89C4E2B2114AC00E392FC /* FuncUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,7 @@
 				102968A42B1A1FB10036CD70 /* ModelFriend.swift */,
 				102968A92B1A485B0036CD70 /* ModelGroup.swift */,
 				102968AB2B1A6DB50036CD70 /* PhotoModel.swift */,
+				10C591C42B24AA33008493A3 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				10A4CAC32B0676B100BCCA13 /* AppDelegate.swift */,
 				105813DA2B11FEB2007433FD /* CustomTableViewCell.swift */,
 				107CB55A2B12D5EE00A7A781 /* CustomGroupTableCell.swift */,
+				10C591C62B24ADD5008493A3 /* UserPageViewController.swift */,
 				102968982B191D140036CD70 /* VKViewController.swift */,
 				105813DC2B121CD8007433FD /* CustomCollectionViewCell.swift */,
 				105813DE2B122372007433FD /* ImageViewController.swift */,
@@ -336,6 +342,7 @@
 				1075E22C2B0FE1D700BDFD07 /* StartPageTabBarController.swift in Sources */,
 				105813DD2B121CD8007433FD /* CustomCollectionViewCell.swift in Sources */,
 				102968AC2B1A6DB50036CD70 /* PhotoModel.swift in Sources */,
+				10C591C72B24ADD5008493A3 /* UserPageViewController.swift in Sources */,
 				105813DF2B122372007433FD /* ImageViewController.swift in Sources */,
 				102968A52B1A1FB10036CD70 /* ModelFriend.swift in Sources */,
 				107CB55B2B12D5EE00A7A781 /* CustomGroupTableCell.swift in Sources */,
@@ -348,6 +355,7 @@
 				1072FFDE2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift in Sources */,
 				102968992B191D140036CD70 /* VKViewController.swift in Sources */,
 				10A4CAC42B0676B100BCCA13 /* AppDelegate.swift in Sources */,
+				10C591C52B24AA33008493A3 /* UserModel.swift in Sources */,
 				10A4CAC62B0676B100BCCA13 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

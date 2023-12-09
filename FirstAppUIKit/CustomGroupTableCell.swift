@@ -10,8 +10,8 @@ import UIKit
 class CustomGroupTableCell: UITableViewCell {
     
     static let identifier = "GroupCell"
-    private var labelHigh = Labels.createLabel(text: "Text_1", fontSize: 25, textAlignment: .natural, textColor: .black)
-    private var labelLow = Labels.createLabel(text: "Text_3", fontSize: 10, textAlignment: .natural, textColor: .black)
+    private var labelHigh = Labels.createLabel(text: "Text_1", fontSize: 25, textAlignment: .natural, textColor: .black, userBorderColor: .white, borderWidth: 0, cornerRadius: 0)
+    private var labelLow = Labels.createLabel(text: "Text_2", fontSize: 15, textAlignment: .natural, textColor: .black, userBorderColor: .white, borderWidth: 0, cornerRadius: 0)
     
     private var groupPhoto = UIImageView()
     

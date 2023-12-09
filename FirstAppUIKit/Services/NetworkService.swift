@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 final class NetworkService {
     static var token = ""
+    static var userId = ""
     private let session = URLSession.shared
     
-    // VkApps скрыт от Гит
     static var request = "https://oauth.vk.com/authorize?client_id=51805697&scope=notify,photos,friends,audio,video,notes,pages,docs,status,questions,offers,wall,groups,messages,notifications,stats,ads,offline&redirect_uri=http://api.vk.com/blank.html&display=mobile&response_type=token"
     
     func getFriends(completion: @escaping ([Friend]) -> Void) {
@@ -50,4 +50,16 @@ final class NetworkService {
                 } catch { print(error) }
             }.resume()
         }
+    func getUser(completion: @escaping ([User]) -> Void) {
+        guard let url = URL(string: "https://api.vk.com/method/users.get?access_token=\(NetworkService.token)&user_ids=\(NetworkService.userId)&fields=photo_400_orig&v=5.199&count=5") else { return }
+        
+        session.dataTask(with: url) { data, _, error in
+            guard let data = data else { return }
+            do {
+                let users = try JSONDecoder().decode(UserModel.self, from: data).response
+                completion(users)
+            } catch { print(error) }
+        }.resume()
+    }
 }
+    

@@ -15,13 +15,11 @@ final class StartPageTabBarController: UITabBarController {
         generateTabBar()        
         
     }
-    
     private func generateTabBar() {
         viewControllers = [
             generateViewController(viewController: FriendsPageTableViewController(), imageName: "friends", title: "Friends", largeTitle: true),
             generateViewController(viewController: GroupsPageTableViewController(), imageName: "groups", title: "Groups", largeTitle: true),
-            generateViewController(viewController: PhotosPageCollectionViewController(collectionViewLayout: .init()), imageName: "photos", title: "Photos", largeTitle: true)
-            
+            generateViewController(viewController: PhotosPageCollectionViewController(collectionViewLayout: .init()), imageName: "photos", title: "Photos", largeTitle: true),
             
         ]
     }
@@ -38,6 +36,8 @@ final class StartPageTabBarController: UITabBarController {
             //добавляем на таббар название контроллера
             controller.tabBarItem.title = title
             
+
+                
             //добавляем на верхний колонтитут надпись
             viewController.navigationItem.title = title
              //указываем большой ли будет титул

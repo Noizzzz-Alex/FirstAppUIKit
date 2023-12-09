@@ -13,6 +13,8 @@ final class FriendsPageTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let profileButton = UIBarButtonItem(title: "My Profile", style: .plain, target: self, action: #selector(profileButtonTapped))
+            navigationItem.rightBarButtonItem = profileButton
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         networkService.getFriends { [weak self] friends in
             self?.friends = friends
@@ -35,6 +37,17 @@ final class FriendsPageTableViewController: UITableViewController {
         }
         cell.configureCell(friends: friends[indexPath.row])
         return cell
+    }
+    
+    
+    @objc func profileButtonTapped() {
+    let transition = CATransition()
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        transition.type = .fade
+    let profileVC = UserPageViewController()
+        navigationController?.view.layer.add(transition, forKey: nil)
+    navigationController?.pushViewController(profileVC, animated: false)
     }
 }
 
