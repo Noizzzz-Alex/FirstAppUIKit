@@ -8,7 +8,7 @@
 import Foundation
 import WebKit
 
-extension VKViewController: WKNavigationDelegate {
+extension AuthorisationPage: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let url = webView.url,
               let fragment = url.fragment,

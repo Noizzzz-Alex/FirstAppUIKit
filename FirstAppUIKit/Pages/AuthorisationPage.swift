@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class VKViewController: UIViewController {
+class AuthorisationPage: UIViewController {
     private lazy var webView: WKWebView = {
         let webView = WKWebView(frame: view.bounds)
         webView.navigationDelegate = self
@@ -30,5 +30,5 @@ class VKViewController: UIViewController {
 }
 
 #Preview {
-    VKViewController()
+    AuthorisationPage()
 }
