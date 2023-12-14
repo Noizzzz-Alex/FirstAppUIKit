@@ -26,22 +26,34 @@ final class FriendsPageTableViewController: UITableViewController, changeTheme {
     }
 
     let networkService = NetworkService()
+    let dataService = DataService()
     var friends = [Friend]()
-//    let tabBar = StartPageTabBarController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        friends = dataService.fetchFriends()
         Theme.isTheme(view: tableView)
         change()
 
         let profileButton = UIBarButtonItem(title: "My Profile", style: .plain, target: self, action: #selector(profileButtonTapped))
         navigationItem.rightBarButtonItem = profileButton
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
-        networkService.getFriends { [weak self] friends in
-            self?.friends = friends
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(update), for: .valueChanged)
+
+        networkService.getFriends { [weak self] results in
+            switch results {
+            case let .success(friends):
+                self?.friends = friends
+                self?.dataService.addFriends(friends: friends)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure:
+                self?.friends = self?.dataService.fetchFriends() ?? []
+                DispatchQueue.main.async {
+                    self?.showAlert()
+                }
             }
         }
     }
@@ -62,8 +74,26 @@ final class FriendsPageTableViewController: UITableViewController, changeTheme {
             for: indexPath) as? CustomTableViewCell else {
             return UITableViewCell()
         }
-        cell.configureCell(friends: friends[indexPath.row])
+        let model = friends[indexPath.row]
+        cell.configureCell(friends: model)
+//        cell.tap = { [weak self] firstName, lastName, photo in
+//            self?.tableViewCellTapped(with: model.self)
+//        }
+
         return cell
+    }
+    func tableViewCellTapped(with model: Friend) {
+        var image = UIImageView()
+        DispatchQueue.global().async {
+            if let url = URL(string: model.photo),
+               let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    image.image = UIImage(data: data)
+                }
+            }
+        }
+//        let profileVC = ProfileFriendPage(image: image.image ?? UIImage(), firstName: model.firstName, lastName: model.lastName)
+//      navigationController?.pushViewController(profileVC, animated: true)
     }
 
     @objc func profileButtonTapped() {
@@ -75,8 +105,33 @@ final class FriendsPageTableViewController: UITableViewController, changeTheme {
         navigationController?.view.layer.add(transition, forKey: nil)
         navigationController?.pushViewController(profileVC, animated: false)
     }
+
+    @objc func update() {
+        networkService.getFriends { [weak self] results in
+            switch results {
+            case let .success(friends):
+                self?.friends = friends
+                self?.dataService.addFriends(friends: friends)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure:
+                self?.friends = self?.dataService.fetchFriends() ?? []
+                DispatchQueue.main.async {
+                    self?.showAlert()
+                }
+            }
+        }
+        DispatchQueue.main.async {
+            self.refreshControl?.endRefreshing()
+        }
+    }
 }
 
+    
+    
+    
+    
 #Preview {
     FriendsPageTableViewController()
 }

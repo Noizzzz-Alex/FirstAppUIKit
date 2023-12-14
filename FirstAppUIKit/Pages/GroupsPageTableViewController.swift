@@ -26,17 +26,32 @@ final class GroupsPageTableViewController: UITableViewController, changeTheme {
     }
     
     let networkService = NetworkService()
+    let dataService = DataService()
     var groups = [Group]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        groups = dataService.fetchGroups()
         Theme.isTheme(view: view)
         change()
         tableView.register(CustomGroupTableCell.self, forCellReuseIdentifier: CustomGroupTableCell.identifier)
-        networkService.getGroups { [weak self] groups in
-            self?.groups = groups
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(update), for: .valueChanged)
+        
+        
+        networkService.getGroups { [weak self] results in
+            switch results {
+            case .success(let groups):
+                self?.groups = groups
+                self?.dataService.addGroup(groups: groups)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure:
+                self?.groups = self?.dataService.fetchGroups() ?? []
+                DispatchQueue.main.async {
+                    self?.showAlert()
+                }
             }
         }
     }
@@ -58,6 +73,26 @@ final class GroupsPageTableViewController: UITableViewController, changeTheme {
         }
         cell.configureCell(groups: groups[indexPath.row])
         return cell
+    }
+    @objc func update() {
+        networkService.getGroups { [weak self] results in
+            switch results {
+            case .success(let groups):
+                self?.groups = groups
+                self?.dataService.addGroup(groups: groups)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure:
+                self?.groups = self?.dataService.fetchGroups() ?? []
+                DispatchQueue.main.async {
+                    self?.showAlert()
+                }
+            }
+        }
+        DispatchQueue.main.async {
+            self.refreshControl?.endRefreshing()
+        }
     }
 }
 #Preview{

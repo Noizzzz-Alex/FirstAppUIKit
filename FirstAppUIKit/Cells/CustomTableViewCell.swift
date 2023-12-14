@@ -8,6 +8,7 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
+//    var tap: (String?, String?, String?) -> Void?
     static let identifier = "Cell"
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,9 @@ class CustomTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
         settingThemeCell()
+        
+//        let recognizer = UITapGestureRecognizer(target: self, action: #selector(cellTap))
+//        addGestureRecognizer(recognizer)
     }
 
     required init?(coder: NSCoder) {
@@ -117,6 +121,20 @@ class CustomTableViewCell: UITableViewCell {
 
         ])
     }
+//    func getImageFromURL(_ urlString: String) -> UIImage? {
+//        guard let url = URL(string: urlString),
+//              let data = try? Data(contentsOf: url),
+//              let image = UIImage(data: data)
+//        else {
+//            return nil
+//        }
+//        
+//        return image
+//    }
+    
+//    @objc func cellTap(){
+//        tap()
+//    }
 }
 
  #Preview(){

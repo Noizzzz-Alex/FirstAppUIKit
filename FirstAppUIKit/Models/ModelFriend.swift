@@ -17,13 +17,14 @@ struct FriendsData: Decodable {
 }
 
 struct Friend: Decodable {
-    
+    let id: Int
     let firstName: String
     let lastName: String
     let photo: String
     let online: Int
 
     private enum CodingKeys: String, CodingKey {
+        case id
         case firstName = "first_name"
         case lastName = "last_name"
         case photo = "photo_50"

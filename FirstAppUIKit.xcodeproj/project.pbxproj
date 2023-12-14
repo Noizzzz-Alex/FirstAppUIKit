@@ -33,6 +33,15 @@
 		10C591C72B24ADD5008493A3 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C591C62B24ADD5008493A3 /* UserPageViewController.swift */; };
 		10EE03072B2A7B760061C23F /* ChangeThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03062B2A7B760061C23F /* ChangeThemeService.swift */; };
 		10EE030A2B2A93A90061C23F /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03092B2A93A90061C23F /* ThemeController.swift */; };
+		10EE030E2B2AEE7C0061C23F /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10EE030C2B2AEE7C0061C23F /* CoreDataModel.xcdatamodeld */; };
+		10EE03182B2AF0480061C23F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03172B2AF0480061C23F /* DataService.swift */; };
+		10EE03312B2B04F50061C23F /* ModelFriendCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE032D2B2B04F50061C23F /* ModelFriendCD+CoreDataClass.swift */; };
+		10EE03322B2B04F50061C23F /* ModelFriendCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE032E2B2B04F50061C23F /* ModelFriendCD+CoreDataProperties.swift */; };
+		10EE03332B2B04F50061C23F /* ModelGroupCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE032F2B2B04F50061C23F /* ModelGroupCD+CoreDataClass.swift */; };
+		10EE03342B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03302B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift */; };
+		10EE03362B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03352B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift */; };
+		10EE03382B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03372B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift */; };
+		10EE033A2B2B19DC0061C23F /* ProfileFriendPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */; };
 		10F89C4F2B2114AC00E392FC /* FuncUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F89C4E2B2114AC00E392FC /* FuncUI.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +93,15 @@
 		10C591C62B24ADD5008493A3 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		10EE03062B2A7B760061C23F /* ChangeThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeThemeService.swift; sourceTree = "<group>"; };
 		10EE03092B2A93A90061C23F /* ThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
+		10EE030D2B2AEE7C0061C23F /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		10EE03172B2AF0480061C23F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		10EE032D2B2B04F50061C23F /* ModelFriendCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelFriendCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		10EE032E2B2B04F50061C23F /* ModelFriendCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelFriendCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		10EE032F2B2B04F50061C23F /* ModelGroupCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelGroupCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		10EE03302B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelGroupCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		10EE03352B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendsPageTableViewController + Extension.swift"; sourceTree = "<group>"; };
+		10EE03372B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsPageTableViewController + Extension.swift"; sourceTree = "<group>"; };
+		10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFriendPage.swift; sourceTree = "<group>"; };
 		10F89C4E2B2114AC00E392FC /* FuncUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				1029689B2B191E3F0036CD70 /* VKViewController + Extension.swift */,
+				10EE03352B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift */,
+				10EE03372B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -125,6 +145,7 @@
 			children = (
 				102968A12B195AA40036CD70 /* NetworkService.swift */,
 				10EE03062B2A7B760061C23F /* ChangeThemeService.swift */,
+				10EE03172B2AF0480061C23F /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -132,6 +153,7 @@
 		102968A32B195B130036CD70 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				10EE030B2B2AEE5F0061C23F /* CoreData */,
 				102968A42B1A1FB10036CD70 /* ModelFriend.swift */,
 				102968A92B1A485B0036CD70 /* ModelGroup.swift */,
 				102968AB2B1A6DB50036CD70 /* PhotoModel.swift */,
@@ -232,6 +254,7 @@
 				1072FFD92B11491900B8BFB4 /* FriendsPageTableViewController.swift */,
 				1072FFDD2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift */,
 				1075E22B2B0FE1D700BDFD07 /* StartPageTabBarController.swift */,
+				10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -243,6 +266,18 @@
 				10A4CAC72B0676B100BCCA13 /* ViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		10EE030B2B2AEE5F0061C23F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				10EE032D2B2B04F50061C23F /* ModelFriendCD+CoreDataClass.swift */,
+				10EE032E2B2B04F50061C23F /* ModelFriendCD+CoreDataProperties.swift */,
+				10EE032F2B2B04F50061C23F /* ModelGroupCD+CoreDataClass.swift */,
+				10EE03302B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift */,
+				10EE030C2B2AEE7C0061C23F /* CoreDataModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,23 +409,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10EE03332B2B04F50061C23F /* ModelGroupCD+CoreDataClass.swift in Sources */,
 				1029689C2B191E3F0036CD70 /* VKViewController + Extension.swift in Sources */,
 				102968A82B1A34200036CD70 /* Constants.swift in Sources */,
 				10F89C4F2B2114AC00E392FC /* FuncUI.swift in Sources */,
 				1075E22C2B0FE1D700BDFD07 /* StartPageTabBarController.swift in Sources */,
+				10EE03182B2AF0480061C23F /* DataService.swift in Sources */,
 				105813DD2B121CD8007433FD /* CustomCollectionViewCell.swift in Sources */,
+				10EE03382B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift in Sources */,
+				10EE03362B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift in Sources */,
 				102968AC2B1A6DB50036CD70 /* PhotoModel.swift in Sources */,
 				10C591C72B24ADD5008493A3 /* UserPageViewController.swift in Sources */,
 				105813DF2B122372007433FD /* ImageViewController.swift in Sources */,
 				102968A52B1A1FB10036CD70 /* ModelFriend.swift in Sources */,
+				10EE03322B2B04F50061C23F /* ModelFriendCD+CoreDataProperties.swift in Sources */,
+				10EE03312B2B04F50061C23F /* ModelFriendCD+CoreDataClass.swift in Sources */,
 				107CB55B2B12D5EE00A7A781 /* CustomGroupTableCell.swift in Sources */,
 				10A4CAC82B0676B100BCCA13 /* ViewController.swift in Sources */,
 				10EE030A2B2A93A90061C23F /* ThemeController.swift in Sources */,
 				10EE03072B2A7B760061C23F /* ChangeThemeService.swift in Sources */,
 				102968AA2B1A485B0036CD70 /* ModelGroup.swift in Sources */,
+				10EE030E2B2AEE7C0061C23F /* CoreDataModel.xcdatamodeld in Sources */,
 				105813DB2B11FEB2007433FD /* CustomTableViewCell.swift in Sources */,
 				1072FFDC2B11495500B8BFB4 /* GroupsPageTableViewController.swift in Sources */,
 				1072FFDA2B11491900B8BFB4 /* FriendsPageTableViewController.swift in Sources */,
+				10EE033A2B2B19DC0061C23F /* ProfileFriendPage.swift in Sources */,
+				10EE03342B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift in Sources */,
 				102968A22B195AA40036CD70 /* NetworkService.swift in Sources */,
 				1072FFDE2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift in Sources */,
 				102968992B191D140036CD70 /* AuthorisationPage.swift in Sources */,
@@ -722,6 +766,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		10EE030C2B2AEE7C0061C23F /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				10EE030D2B2AEE7C0061C23F /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 10EE030D2B2AEE7C0061C23F /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 10A4CAB82B0676B100BCCA13 /* Project object */;
 }

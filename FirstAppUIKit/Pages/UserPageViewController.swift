@@ -57,11 +57,19 @@ final class UserPageViewController: UIViewController {
         }
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     private func setupViews() {
         view.addSubview(labelFirstName)
         view.addSubview(labelLastName)
         view.addSubview(userImageProfile)
-//        view.addSubview(button)
         setupConstraintsView()
     }
 
@@ -69,7 +77,6 @@ final class UserPageViewController: UIViewController {
         labelFirstName.translatesAutoresizingMaskIntoConstraints = false
         labelLastName.translatesAutoresizingMaskIntoConstraints = false
         userImageProfile.translatesAutoresizingMaskIntoConstraints = false
-//        button.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             // MARK: User Image
@@ -91,16 +98,12 @@ final class UserPageViewController: UIViewController {
 
             labelLastName.topAnchor.constraint(equalTo: labelFirstName.bottomAnchor, constant: 12.5),
             labelLastName.leadingAnchor.constraint(equalTo: labelFirstName.leadingAnchor),
-            labelLastName.trailingAnchor.constraint(equalTo: labelFirstName.trailingAnchor),
-            
-//            //MARK: button
-//            
-//            button.topAnchor.constraint(equalTo: labelLastName.bottomAnchor, constant: 30),
-//            button.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            button.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            labelLastName.trailingAnchor.constraint(equalTo: labelFirstName.trailingAnchor)
 
         ])
     }
+    
+    
     @objc func themeButtonTapped() {
     let transition = CATransition()
         transition.duration = 0.5
