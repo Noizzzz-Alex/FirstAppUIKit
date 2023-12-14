@@ -11,16 +11,20 @@ import UIKit
 final class UserPageViewController: UIViewController {
     let networkService = NetworkService()
     var users = [User]()
+    
 
     var userImageProfile = UIImageView()
-    var labelFirstName = Labels.createLabel(text: "", fontSize: 30, textAlignment: .center, textColor: .black, userBorderColor: .black, borderWidth: 0, cornerRadius: 5)
-    var labelLastName = Labels.createLabel(text: "", fontSize: 30, textAlignment: .center, textColor: .black, userBorderColor: .black, borderWidth: 0, cornerRadius: 5)
+    var labelFirstName = Labels.createLabel(text: "", fontSize: 30, textAlignment: .center, borderWidth: 0, cornerRadius: 5)
+    var labelLastName = Labels.createLabel(text: "", fontSize: 30, textAlignment: .center, borderWidth: 0, cornerRadius: 5)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViews()
         load()
+        let themeButton = UIBarButtonItem(title: "My Theme", style: .plain, target: self, action: #selector(themeButtonTapped))
+        navigationItem.rightBarButtonItem = themeButton
+        Theme.isTheme(view: view)
     }
     
     func load() {
@@ -30,6 +34,9 @@ final class UserPageViewController: UIViewController {
                 self?.configureView(users: users.first ?? User(firstName: "John", lastName: "Dow", photo: "default", id: 1))
             }
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        Theme.isTheme(view: view)
     }
 
     
@@ -54,6 +61,7 @@ final class UserPageViewController: UIViewController {
         view.addSubview(labelFirstName)
         view.addSubview(labelLastName)
         view.addSubview(userImageProfile)
+//        view.addSubview(button)
         setupConstraintsView()
     }
 
@@ -61,6 +69,7 @@ final class UserPageViewController: UIViewController {
         labelFirstName.translatesAutoresizingMaskIntoConstraints = false
         labelLastName.translatesAutoresizingMaskIntoConstraints = false
         userImageProfile.translatesAutoresizingMaskIntoConstraints = false
+//        button.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             // MARK: User Image
@@ -83,11 +92,27 @@ final class UserPageViewController: UIViewController {
             labelLastName.topAnchor.constraint(equalTo: labelFirstName.bottomAnchor, constant: 12.5),
             labelLastName.leadingAnchor.constraint(equalTo: labelFirstName.leadingAnchor),
             labelLastName.trailingAnchor.constraint(equalTo: labelFirstName.trailingAnchor),
+            
+//            //MARK: button
+//            
+//            button.topAnchor.constraint(equalTo: labelLastName.bottomAnchor, constant: 30),
+//            button.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            button.trailingAnchor.constraint(equalTo: view.trailingAnchor)
 
         ])
     }
+    @objc func themeButtonTapped() {
+    let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        transition.type = .fade
+    let themeVC = ThemeController()
+        navigationController?.view.layer.add(transition, forKey: nil)
+    navigationController?.pushViewController(themeVC, animated: false)
+    }
     
 }
+
 
 #Preview {
     UserPageViewController()

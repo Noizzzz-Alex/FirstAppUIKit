@@ -25,6 +25,11 @@ class PhotosPageCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Theme.isTheme(view: collectionView)
+//        collectionViewLayout.collectionView?.backgroundColor = .black
+        
+        
+        
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: PhotosPageCollectionViewController.reuseIdentifier)
         NetworkService().getPhotos { [weak self] photos in
             self?.photos = photos
@@ -32,6 +37,9 @@ class PhotosPageCollectionViewController: UICollectionViewController {
                 self?.collectionView.reloadData()
             }
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        Theme.isTheme(view: collectionView)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

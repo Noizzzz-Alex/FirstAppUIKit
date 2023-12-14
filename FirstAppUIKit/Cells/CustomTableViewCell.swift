@@ -11,24 +11,24 @@ class CustomTableViewCell: UITableViewCell {
     static let identifier = "Cell"
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
     private var userPhoto = UIImageView()
     private var onlineFlag = CircleViews.createCircleUIView(color: .blue, radius: 0)
-    private var labelHigh = Labels.createLabel(text: "Text_1", fontSize: 25, textAlignment: .natural, textColor: .black, userBorderColor: .white, borderWidth: 0, cornerRadius: 0)
-    private var labelMiddle = Labels.createLabel(text: "Text_2", fontSize: 25, textAlignment: .natural, textColor: .black, userBorderColor: .black, borderWidth: 0, cornerRadius: 0)
-    private var labelLow = Labels.createLabel(text: "Text_3", fontSize: 25, textAlignment: .natural, textColor: .black, userBorderColor: .white, borderWidth: 0, cornerRadius: 0)
+    private var labelHigh = Labels.createLabel(text: "Text_1", fontSize: 25, textAlignment: .natural, borderWidth: 0, cornerRadius: 0)
+    private var labelMiddle = Labels.createLabel(text: "Text_2", fontSize: 25, textAlignment: .natural, borderWidth: 0, cornerRadius: 0)
+    private var labelLow = Labels.createLabel(text: "Text_3", fontSize: 25, textAlignment: .natural, borderWidth: 0, cornerRadius: 0)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
         setupViews()
+        settingThemeCell()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     func configureCell(friends: Friend) {
         labelHigh.text = friends.firstName
         labelMiddle.text = friends.lastName
@@ -43,7 +43,28 @@ class CustomTableViewCell: UITableViewCell {
             }
         }
     }
-
+    func settingThemeCell() {
+        switch CurrentTheme.currentTheme {
+        case .light:
+            contentView.backgroundColor = .white
+            labelHigh.textColor = .black
+            labelMiddle.textColor = .black
+            labelLow.textColor = .black
+        case .dark:
+            contentView.backgroundColor = .black
+            labelHigh.textColor = .white
+            labelMiddle.textColor = .white
+            labelLow.textColor = .white
+        case .gray:
+            contentView.backgroundColor = .gray
+            labelHigh.textColor = .black
+            labelMiddle.textColor = .black
+            labelLow.textColor = .black
+        }
+        
+    }
+    
+    
     private func setupViews() {
         contentView.addSubview(userPhoto)
         contentView.addSubview(onlineFlag)

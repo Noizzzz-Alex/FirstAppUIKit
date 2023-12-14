@@ -7,12 +7,31 @@
 
 import UIKit
 
-final class GroupsPageTableViewController: UITableViewController {
+final class GroupsPageTableViewController: UITableViewController, changeTheme {
+    func change() {
+        switch CurrentTheme.currentTheme {
+        case .light:
+            view.backgroundColor = .white
+        case .dark:
+            view.backgroundColor = .black
+        case .gray:
+            view.backgroundColor = .gray
+        }
+
+        for indexPath in tableView.indexPathsForVisibleRows ?? [] {
+            if let cell = tableView.cellForRow(at: indexPath) as? CustomGroupTableCell {
+                cell.settingThemeCell()
+            }
+        }
+    }
+    
     let networkService = NetworkService()
     var groups = [Group]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Theme.isTheme(view: view)
+        change()
         tableView.register(CustomGroupTableCell.self, forCellReuseIdentifier: CustomGroupTableCell.identifier)
         networkService.getGroups { [weak self] groups in
             self?.groups = groups
@@ -20,6 +39,10 @@ final class GroupsPageTableViewController: UITableViewController {
                 self?.tableView.reloadData()
             }
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        Theme.isTheme(view: view)
+        change()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +60,7 @@ final class GroupsPageTableViewController: UITableViewController {
         return cell
     }
 }
-//#Preview{
-//    GroupsPageTableViewController()
-//}
+#Preview{
+    GroupsPageTableViewController()
+}
 

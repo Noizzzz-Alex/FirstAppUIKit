@@ -10,8 +10,8 @@ import UIKit
 class CustomGroupTableCell: UITableViewCell {
     
     static let identifier = "GroupCell"
-    private var labelHigh = Labels.createLabel(text: "Text_1", fontSize: 25, textAlignment: .natural, textColor: .black, userBorderColor: .white, borderWidth: 0, cornerRadius: 0)
-    private var labelLow = Labels.createLabel(text: "Text_2", fontSize: 15, textAlignment: .natural, textColor: .black, userBorderColor: .white, borderWidth: 0, cornerRadius: 0)
+    private var labelHigh = Labels.createLabel(text: "Text_1", fontSize: 25, textAlignment: .natural, borderWidth: 0, cornerRadius: 0)
+    private var labelLow = Labels.createLabel(text: "Text_2", fontSize: 15, textAlignment: .natural, borderWidth: 0, cornerRadius: 0)
     
     private var groupPhoto = UIImageView()
     
@@ -37,6 +37,23 @@ class CustomGroupTableCell: UITableViewCell {
                 }
             }
         }
+    }
+    func settingThemeCell() {
+        switch CurrentTheme.currentTheme {
+        case .light:
+            contentView.backgroundColor = .white
+            labelHigh.textColor = .black
+            labelLow.textColor = .black
+        case .dark:
+            contentView.backgroundColor = .black
+            labelHigh.textColor = .white
+            labelLow.textColor = .white
+        case .gray:
+            contentView.backgroundColor = .gray
+            labelHigh.textColor = .black
+            labelLow.textColor = .black
+        }
+        
     }
 
     private func setupViews() {

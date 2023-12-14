@@ -31,6 +31,8 @@
 		10A4CAE72B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAE62B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift */; };
 		10C591C52B24AA33008493A3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C591C42B24AA33008493A3 /* UserModel.swift */; };
 		10C591C72B24ADD5008493A3 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C591C62B24ADD5008493A3 /* UserPageViewController.swift */; };
+		10EE03072B2A7B760061C23F /* ChangeThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03062B2A7B760061C23F /* ChangeThemeService.swift */; };
+		10EE030A2B2A93A90061C23F /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03092B2A93A90061C23F /* ThemeController.swift */; };
 		10F89C4F2B2114AC00E392FC /* FuncUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F89C4E2B2114AC00E392FC /* FuncUI.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		10A4CAE62B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		10C591C42B24AA33008493A3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		10C591C62B24ADD5008493A3 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
+		10EE03062B2A7B760061C23F /* ChangeThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeThemeService.swift; sourceTree = "<group>"; };
+		10EE03092B2A93A90061C23F /* ThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
 		10F89C4E2B2114AC00E392FC /* FuncUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				102968A12B195AA40036CD70 /* NetworkService.swift */,
+				10EE03062B2A7B760061C23F /* ChangeThemeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			children = (
 				102968982B191D140036CD70 /* AuthorisationPage.swift */,
 				10C591C62B24ADD5008493A3 /* UserPageViewController.swift */,
+				10EE03092B2A93A90061C23F /* ThemeController.swift */,
 				1072FFDB2B11495500B8BFB4 /* GroupsPageTableViewController.swift */,
 				1072FFD92B11491900B8BFB4 /* FriendsPageTableViewController.swift */,
 				1072FFDD2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift */,
@@ -379,6 +385,8 @@
 				102968A52B1A1FB10036CD70 /* ModelFriend.swift in Sources */,
 				107CB55B2B12D5EE00A7A781 /* CustomGroupTableCell.swift in Sources */,
 				10A4CAC82B0676B100BCCA13 /* ViewController.swift in Sources */,
+				10EE030A2B2A93A90061C23F /* ThemeController.swift in Sources */,
+				10EE03072B2A7B760061C23F /* ChangeThemeService.swift in Sources */,
 				102968AA2B1A485B0036CD70 /* ModelGroup.swift in Sources */,
 				105813DB2B11FEB2007433FD /* CustomTableViewCell.swift in Sources */,
 				1072FFDC2B11495500B8BFB4 /* GroupsPageTableViewController.swift in Sources */,
