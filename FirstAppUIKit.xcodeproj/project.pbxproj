@@ -17,22 +17,21 @@
 		105813DB2B11FEB2007433FD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105813DA2B11FEB2007433FD /* CustomTableViewCell.swift */; };
 		105813DD2B121CD8007433FD /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105813DC2B121CD8007433FD /* CustomCollectionViewCell.swift */; };
 		105813DF2B122372007433FD /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105813DE2B122372007433FD /* ImageViewController.swift */; };
+		107279202B307220008DF35C /* StartPageTabBarController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072791F2B307220008DF35C /* StartPageTabBarController + Extension.swift */; };
+		107279302B31B2C2008DF35C /* NetworkService + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072792F2B31B2C2008DF35C /* NetworkService + Extension.swift */; };
 		1072FFDA2B11491900B8BFB4 /* FriendsPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072FFD92B11491900B8BFB4 /* FriendsPageTableViewController.swift */; };
 		1072FFDC2B11495500B8BFB4 /* GroupsPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072FFDB2B11495500B8BFB4 /* GroupsPageTableViewController.swift */; };
 		1072FFDE2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072FFDD2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift */; };
-		1075E22C2B0FE1D700BDFD07 /* StartPageTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075E22B2B0FE1D700BDFD07 /* StartPageTabBarController.swift */; };
+		1075E22C2B0FE1D700BDFD07 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075E22B2B0FE1D700BDFD07 /* MainTabBarViewController.swift */; };
 		107CB55B2B12D5EE00A7A781 /* CustomGroupTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CB55A2B12D5EE00A7A781 /* CustomGroupTableCell.swift */; };
 		10A4CAC42B0676B100BCCA13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAC32B0676B100BCCA13 /* AppDelegate.swift */; };
 		10A4CAC62B0676B100BCCA13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAC52B0676B100BCCA13 /* SceneDelegate.swift */; };
-		10A4CAC82B0676B100BCCA13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAC72B0676B100BCCA13 /* ViewController.swift */; };
 		10A4CACD2B0676B200BCCA13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A4CACC2B0676B200BCCA13 /* Assets.xcassets */; };
-		10A4CADB2B0676B200BCCA13 /* FirstAppUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CADA2B0676B200BCCA13 /* FirstAppUIKitTests.swift */; };
-		10A4CAE52B0676B200BCCA13 /* FirstAppUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAE42B0676B200BCCA13 /* FirstAppUIKitUITests.swift */; };
-		10A4CAE72B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4CAE62B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift */; };
 		10C591C52B24AA33008493A3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C591C42B24AA33008493A3 /* UserModel.swift */; };
 		10C591C72B24ADD5008493A3 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C591C62B24ADD5008493A3 /* UserPageViewController.swift */; };
+		10D631AA2B36B0AB00B53594 /* ControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D631A92B36B0AB00B53594 /* ControllerManager.swift */; };
 		10EE03072B2A7B760061C23F /* ChangeThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03062B2A7B760061C23F /* ChangeThemeService.swift */; };
-		10EE030A2B2A93A90061C23F /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03092B2A93A90061C23F /* ThemeController.swift */; };
+		10EE030A2B2A93A90061C23F /* ThemePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03092B2A93A90061C23F /* ThemePageController.swift */; };
 		10EE030E2B2AEE7C0061C23F /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10EE030C2B2AEE7C0061C23F /* CoreDataModel.xcdatamodeld */; };
 		10EE03182B2AF0480061C23F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03172B2AF0480061C23F /* DataService.swift */; };
 		10EE03312B2B04F50061C23F /* ModelFriendCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE032D2B2B04F50061C23F /* ModelFriendCD+CoreDataClass.swift */; };
@@ -42,6 +41,7 @@
 		10EE03362B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03352B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift */; };
 		10EE03382B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03372B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift */; };
 		10EE033A2B2B19DC0061C23F /* ProfileFriendPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */; };
+		10F298602B35769B00F51D06 /* ThemeChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F2985F2B35769B00F51D06 /* ThemeChangeDelegate.swift */; };
 		10F89C4F2B2114AC00E392FC /* FuncUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F89C4E2B2114AC00E392FC /* FuncUI.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,26 +73,25 @@
 		105813DA2B11FEB2007433FD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		105813DC2B121CD8007433FD /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		105813DE2B122372007433FD /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		1072791F2B307220008DF35C /* StartPageTabBarController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartPageTabBarController + Extension.swift"; sourceTree = "<group>"; };
+		1072792F2B31B2C2008DF35C /* NetworkService + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService + Extension.swift"; sourceTree = "<group>"; };
 		1072FFD92B11491900B8BFB4 /* FriendsPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPageTableViewController.swift; sourceTree = "<group>"; };
 		1072FFDB2B11495500B8BFB4 /* GroupsPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsPageTableViewController.swift; sourceTree = "<group>"; };
 		1072FFDD2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPageCollectionViewController.swift; sourceTree = "<group>"; };
-		1075E22B2B0FE1D700BDFD07 /* StartPageTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageTabBarController.swift; sourceTree = "<group>"; };
+		1075E22B2B0FE1D700BDFD07 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		107CB55A2B12D5EE00A7A781 /* CustomGroupTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGroupTableCell.swift; sourceTree = "<group>"; };
 		10A4CAC02B0676B100BCCA13 /* FirstAppUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstAppUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A4CAC32B0676B100BCCA13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10A4CAC52B0676B100BCCA13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		10A4CAC72B0676B100BCCA13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10A4CACC2B0676B200BCCA13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10A4CAD12B0676B200BCCA13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10A4CAD62B0676B200BCCA13 /* FirstAppUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		10A4CADA2B0676B200BCCA13 /* FirstAppUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUIKitTests.swift; sourceTree = "<group>"; };
 		10A4CAE02B0676B200BCCA13 /* FirstAppUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		10A4CAE42B0676B200BCCA13 /* FirstAppUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUIKitUITests.swift; sourceTree = "<group>"; };
-		10A4CAE62B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		10C591C42B24AA33008493A3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		10C591C62B24ADD5008493A3 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
+		10D631A92B36B0AB00B53594 /* ControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerManager.swift; sourceTree = "<group>"; };
 		10EE03062B2A7B760061C23F /* ChangeThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeThemeService.swift; sourceTree = "<group>"; };
-		10EE03092B2A93A90061C23F /* ThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
+		10EE03092B2A93A90061C23F /* ThemePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePageController.swift; sourceTree = "<group>"; };
 		10EE030D2B2AEE7C0061C23F /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		10EE03172B2AF0480061C23F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		10EE032D2B2B04F50061C23F /* ModelFriendCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelFriendCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -102,6 +101,7 @@
 		10EE03352B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendsPageTableViewController + Extension.swift"; sourceTree = "<group>"; };
 		10EE03372B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsPageTableViewController + Extension.swift"; sourceTree = "<group>"; };
 		10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFriendPage.swift; sourceTree = "<group>"; };
+		10F2985F2B35769B00F51D06 /* ThemeChangeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangeDelegate.swift; sourceTree = "<group>"; };
 		10F89C4E2B2114AC00E392FC /* FuncUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +136,8 @@
 				1029689B2B191E3F0036CD70 /* VKViewController + Extension.swift */,
 				10EE03352B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift */,
 				10EE03372B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift */,
+				1072791F2B307220008DF35C /* StartPageTabBarController + Extension.swift */,
+				1072792F2B31B2C2008DF35C /* NetworkService + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -150,7 +152,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		102968A32B195B130036CD70 /* Models */ = {
+		102968A32B195B130036CD70 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				10EE030B2B2AEE5F0061C23F /* CoreData */,
@@ -159,7 +161,7 @@
 				102968AB2B1A6DB50036CD70 /* PhotoModel.swift */,
 				10C591C42B24AA33008493A3 /* UserModel.swift */,
 			);
-			path = Models;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		102968A62B1A33FD0036CD70 /* Resources */ = {
@@ -175,8 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				10A4CAC22B0676B100BCCA13 /* FirstAppUIKit */,
-				10A4CAD92B0676B200BCCA13 /* FirstAppUIKitTests */,
-				10A4CAE32B0676B200BCCA13 /* FirstAppUIKitUITests */,
 				10A4CAC12B0676B100BCCA13 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -194,35 +194,34 @@
 		10A4CAC22B0676B100BCCA13 /* FirstAppUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				10EBC1E02B278CCE002C3F85 /* Delegates */,
-				102968A62B1A33FD0036CD70 /* Resources */,
-				102968A32B195B130036CD70 /* Models */,
-				102968A02B195A8B0036CD70 /* Services */,
-				1029689A2B191E0C0036CD70 /* Extensions */,
-				10EBC1E12B278CFD002C3F85 /* Cells */,
 				10EBC1E32B278DFE002C3F85 /* Controllers */,
-				10EBC1E22B278D16002C3F85 /* Pages */,
+				10AF03AF2B2F335D0050A877 /* View */,
+				10AF03AE2B2F33530050A877 /* Model */,
 				10A4CACC2B0676B200BCCA13 /* Assets.xcassets */,
 				10A4CAD12B0676B200BCCA13 /* Info.plist */,
 			);
 			path = FirstAppUIKit;
 			sourceTree = "<group>";
 		};
-		10A4CAD92B0676B200BCCA13 /* FirstAppUIKitTests */ = {
+		10AF03AE2B2F33530050A877 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				10A4CADA2B0676B200BCCA13 /* FirstAppUIKitTests.swift */,
+				10F2985E2B35767B00F51D06 /* Protocols */,
+				1029689A2B191E0C0036CD70 /* Extensions */,
+				102968A02B195A8B0036CD70 /* Services */,
+				102968A62B1A33FD0036CD70 /* Resources */,
+				102968A32B195B130036CD70 /* DataModels */,
+				10EBC1E02B278CCE002C3F85 /* Delegates */,
 			);
-			path = FirstAppUIKitTests;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		10A4CAE32B0676B200BCCA13 /* FirstAppUIKitUITests */ = {
+		10AF03AF2B2F335D0050A877 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				10A4CAE42B0676B200BCCA13 /* FirstAppUIKitUITests.swift */,
-				10A4CAE62B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift */,
+				10EBC1E12B278CFD002C3F85 /* Cells */,
 			);
-			path = FirstAppUIKitUITests;
+			path = View;
 			sourceTree = "<group>";
 		};
 		10EBC1E02B278CCE002C3F85 /* Delegates */ = {
@@ -244,26 +243,19 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		10EBC1E22B278D16002C3F85 /* Pages */ = {
-			isa = PBXGroup;
-			children = (
-				102968982B191D140036CD70 /* AuthorisationPage.swift */,
-				10C591C62B24ADD5008493A3 /* UserPageViewController.swift */,
-				10EE03092B2A93A90061C23F /* ThemeController.swift */,
-				1072FFDB2B11495500B8BFB4 /* GroupsPageTableViewController.swift */,
-				1072FFD92B11491900B8BFB4 /* FriendsPageTableViewController.swift */,
-				1072FFDD2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift */,
-				1075E22B2B0FE1D700BDFD07 /* StartPageTabBarController.swift */,
-				10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */,
-			);
-			path = Pages;
-			sourceTree = "<group>";
-		};
 		10EBC1E32B278DFE002C3F85 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				105813DE2B122372007433FD /* ImageViewController.swift */,
-				10A4CAC72B0676B100BCCA13 /* ViewController.swift */,
+				1072FFD92B11491900B8BFB4 /* FriendsPageTableViewController.swift */,
+				1075E22B2B0FE1D700BDFD07 /* MainTabBarViewController.swift */,
+				1072FFDD2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift */,
+				1072FFDB2B11495500B8BFB4 /* GroupsPageTableViewController.swift */,
+				10C591C62B24ADD5008493A3 /* UserPageViewController.swift */,
+				10EE03092B2A93A90061C23F /* ThemePageController.swift */,
+				10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */,
+				102968982B191D140036CD70 /* AuthorisationPage.swift */,
+				10D631A92B36B0AB00B53594 /* ControllerManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -278,6 +270,14 @@
 				10EE030C2B2AEE7C0061C23F /* CoreDataModel.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		10F2985E2B35767B00F51D06 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				10F2985F2B35769B00F51D06 /* ThemeChangeDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,11 +409,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D631AA2B36B0AB00B53594 /* ControllerManager.swift in Sources */,
 				10EE03332B2B04F50061C23F /* ModelGroupCD+CoreDataClass.swift in Sources */,
+				107279302B31B2C2008DF35C /* NetworkService + Extension.swift in Sources */,
 				1029689C2B191E3F0036CD70 /* VKViewController + Extension.swift in Sources */,
 				102968A82B1A34200036CD70 /* Constants.swift in Sources */,
+				107279202B307220008DF35C /* StartPageTabBarController + Extension.swift in Sources */,
 				10F89C4F2B2114AC00E392FC /* FuncUI.swift in Sources */,
-				1075E22C2B0FE1D700BDFD07 /* StartPageTabBarController.swift in Sources */,
+				1075E22C2B0FE1D700BDFD07 /* MainTabBarViewController.swift in Sources */,
 				10EE03182B2AF0480061C23F /* DataService.swift in Sources */,
 				105813DD2B121CD8007433FD /* CustomCollectionViewCell.swift in Sources */,
 				10EE03382B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift in Sources */,
@@ -425,13 +428,13 @@
 				10EE03322B2B04F50061C23F /* ModelFriendCD+CoreDataProperties.swift in Sources */,
 				10EE03312B2B04F50061C23F /* ModelFriendCD+CoreDataClass.swift in Sources */,
 				107CB55B2B12D5EE00A7A781 /* CustomGroupTableCell.swift in Sources */,
-				10A4CAC82B0676B100BCCA13 /* ViewController.swift in Sources */,
-				10EE030A2B2A93A90061C23F /* ThemeController.swift in Sources */,
+				10EE030A2B2A93A90061C23F /* ThemePageController.swift in Sources */,
 				10EE03072B2A7B760061C23F /* ChangeThemeService.swift in Sources */,
 				102968AA2B1A485B0036CD70 /* ModelGroup.swift in Sources */,
 				10EE030E2B2AEE7C0061C23F /* CoreDataModel.xcdatamodeld in Sources */,
 				105813DB2B11FEB2007433FD /* CustomTableViewCell.swift in Sources */,
 				1072FFDC2B11495500B8BFB4 /* GroupsPageTableViewController.swift in Sources */,
+				10F298602B35769B00F51D06 /* ThemeChangeDelegate.swift in Sources */,
 				1072FFDA2B11491900B8BFB4 /* FriendsPageTableViewController.swift in Sources */,
 				10EE033A2B2B19DC0061C23F /* ProfileFriendPage.swift in Sources */,
 				10EE03342B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift in Sources */,
@@ -448,7 +451,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10A4CADB2B0676B200BCCA13 /* FirstAppUIKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,8 +458,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10A4CAE72B0676B200BCCA13 /* FirstAppUIKitUITestsLaunchTests.swift in Sources */,
-				10A4CAE52B0676B200BCCA13 /* FirstAppUIKitUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

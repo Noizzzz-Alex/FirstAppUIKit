@@ -38,7 +38,7 @@ extension AuthorisationPage: WKNavigationDelegate {
               let window = windowScene.windows.first else {
             return
         }
-        window.rootViewController = StartPageTabBarController()
+        window.rootViewController = MainTabBarViewController()
         window.makeKeyAndVisible()
     }
 }

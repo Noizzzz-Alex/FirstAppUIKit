@@ -16,7 +16,7 @@ final class ProfileFriendPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setupView()
-        Theme.isTheme(view: view)
+//        Theme.isTheme(view: view)
     }
 
     var userImageProfile = UIImageView()

@@ -8,25 +8,91 @@
 import Foundation
 import UIKit
 
-final class UserPageViewController: UIViewController {
+final class UserPageViewController: UIViewController, ThemeChangeDelegate, BackgroundColor {
+    
+    
+    
+    // MARK: ProtocolsMethods
+    func changeBackgroundColor() {
+        switch CurrentTheme.currentTheme {
+        case .light:
+            view.backgroundColor = .white
+            labelFirstName.textColor = .systemBlue
+            labelLastName.textColor = .systemBlue
+        case .dark:
+            view.backgroundColor = .black
+            labelFirstName.textColor = .systemPink
+            labelLastName.textColor = .systemPink
+        case .gray:
+            view.backgroundColor = .gray
+            labelFirstName.textColor = .systemYellow
+            labelLastName.textColor = .systemYellow
+        }
+    }
+
+    func themeDidChanged(toTheme: ThemeType) {
+        switch toTheme {
+        case .light:
+            view.backgroundColor = .white
+            labelFirstName.textColor = .systemBlue
+            labelLastName.textColor = .systemBlue
+        case .dark:
+            view.backgroundColor = .black
+            labelFirstName.textColor = .systemPink
+            labelLastName.textColor = .systemPink
+        case .gray:
+            view.backgroundColor = .gray
+            labelFirstName.textColor = .systemYellow
+            labelLastName.textColor = .systemYellow
+        }
+    }
+
+    
+    
+    // MARK: Variables
     let networkService = NetworkService()
     var users = [User]()
+
+    var userImageProfile: UIImageView = {
+        var photo = UIImageView()
+        photo.image = UIImage(named: "person")
+        photo.layer.cornerRadius = 25
+        photo.clipsToBounds = true
+        photo.backgroundColor = .clear
+        photo.contentMode = .scaleAspectFit
+        return photo
+    }()
+
+    var labelFirstName: UILabel = {
+        let label = UILabel()
+        label.text = "First Name"
+        label.font = UIFont.systemFont(ofSize: 50)
+        label.textAlignment = .center
+        return label
+    }()
+
+    var labelLastName: UILabel = {
+        let label = UILabel()
+        label.text = "Last Name"
+        label.font = UIFont.systemFont(ofSize: 35)
+        label.textAlignment = .center
+        return label
+    }()
+
     
-
-    var userImageProfile = UIImageView()
-    var labelFirstName = Labels.createLabel(text: "", fontSize: 30, textAlignment: .center, borderWidth: 0, cornerRadius: 5)
-    var labelLastName = Labels.createLabel(text: "", fontSize: 30, textAlignment: .center, borderWidth: 0, cornerRadius: 5)
-
+    
+    // MARK: LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        changeBackgroundColor()
+        CurrentTheme.themeDelegate = self
         setupViews()
         load()
-        let themeButton = UIBarButtonItem(title: "My Theme", style: .plain, target: self, action: #selector(themeButtonTapped))
-        navigationItem.rightBarButtonItem = themeButton
-        Theme.isTheme(view: view)
     }
+
     
+    
+    // MARK: networkFunc
     func load() {
         networkService.getUser { [weak self] users in
             self?.users = users
@@ -35,11 +101,6 @@ final class UserPageViewController: UIViewController {
             }
         }
     }
-    override func viewDidAppear(_ animated: Bool) {
-        Theme.isTheme(view: view)
-    }
-
-    
 
     func configureView(users: User) {
         labelFirstName.text = users.firstName
@@ -56,21 +117,17 @@ final class UserPageViewController: UIViewController {
             }
         }
     }
-
     
     
     
-    
-    
-    
-    
-    
-    
+    // MARK: setupViews&Constraints
     private func setupViews() {
         view.addSubview(labelFirstName)
         view.addSubview(labelLastName)
         view.addSubview(userImageProfile)
         setupConstraintsView()
+        let themeButton = UIBarButtonItem(title: "My Theme", style: .plain, target: self, action: #selector(themeButtonTapped))
+        navigationItem.rightBarButtonItem = themeButton
     }
 
     private func setupConstraintsView() {
@@ -98,24 +155,24 @@ final class UserPageViewController: UIViewController {
 
             labelLastName.topAnchor.constraint(equalTo: labelFirstName.bottomAnchor, constant: 12.5),
             labelLastName.leadingAnchor.constraint(equalTo: labelFirstName.leadingAnchor),
-            labelLastName.trailingAnchor.constraint(equalTo: labelFirstName.trailingAnchor)
+            labelLastName.trailingAnchor.constraint(equalTo: labelFirstName.trailingAnchor),
 
         ])
     }
+
     
     
+    // MARK: obj-c func
     @objc func themeButtonTapped() {
-    let transition = CATransition()
+        let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         transition.type = .fade
-    let themeVC = ThemeController()
+        let themeVC = ThemePageController()
         navigationController?.view.layer.add(transition, forKey: nil)
-    navigationController?.pushViewController(themeVC, animated: false)
+        navigationController?.pushViewController(themeVC, animated: false)
     }
-    
 }
-
 
 #Preview {
     UserPageViewController()

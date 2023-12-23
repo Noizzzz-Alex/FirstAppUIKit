@@ -43,13 +43,14 @@ struct CircleViews {
     }
 }
 
-struct Buttons{
+struct CustomButtons{
     static func createButton(type: UIButton.ButtonType, text: String, state: UIControl.State, target: Any?, action: Selector, event: UIControl.Event ) -> UIButton {
         let button = UIButton()
         button.setTitle(text, for: state)
         button.addTarget(target, action: action, for: event)
         return button
     }
+    
     static func createSimpleButton(title: String, state: UIControl.State ) -> UIButton {
         let button = UIButton()
         switch CurrentTheme.currentTheme{

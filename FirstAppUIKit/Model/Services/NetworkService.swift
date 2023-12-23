@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 final class NetworkService {
+    
+    
     static var token = ""
     static var userId = ""
     private let session = URLSession.shared
@@ -15,7 +17,7 @@ final class NetworkService {
     static var request = "https://oauth.vk.com/authorize?client_id=51805697&scope=notify,photos,friends,audio,video,notes,pages,docs,status,questions,offers,wall,groups,messages,notifications,stats,ads,offline&redirect_uri=http://api.vk.com/blank.html&display=mobile&response_type=token"
 
     func getFriends(completion: @escaping (Result<[Friend], Error>) -> Void) {
-        guard let url = URL(string: "https://api.vk.com/method/friends.get?access_token=\(NetworkService.token)&fields=photo_50,online&v=5.199&count=15") else { return }
+        guard let url = URL(string: "https://api.vk.com/method/friends.get?access_token=\(NetworkService.token)&fields=photo_50,online&v=5.199&count=5") else { return }
 
         session.dataTask(with: url) { data, _, error in
             guard let data = data else {
@@ -34,7 +36,7 @@ final class NetworkService {
     }
 
     func getGroups(completion: @escaping (Result<[Group], Error>) -> Void) {
-        guard let url = URL(string: "https://api.vk.com/method/groups.get?access_token=\(NetworkService.token)&fields=description&v=5.199&extended=1&count=15") else { return }
+        guard let url = URL(string: "https://api.vk.com/method/groups.get?access_token=\(NetworkService.token)&fields=description&v=5.199&extended=1&count=5") else { return }
 
         session.dataTask(with: url) { data, _, error in
             guard let data = data else {
@@ -53,7 +55,7 @@ final class NetworkService {
     }
 
     func getPhotos(completion: @escaping ([Photo]) -> Void) {
-        guard let url = URL(string: "https://api.vk.com/method/photos.get?access_token=\(NetworkService.token)&v=5.199&&album_id=profile&count=10") else { return }
+        guard let url = URL(string: "https://api.vk.com/method/photos.get?access_token=\(NetworkService.token)&v=5.199&&album_id=profile&count=5") else { return }
 
         session.dataTask(with: url) { data, _, error in
             guard let data = data else { return }
