@@ -40,7 +40,6 @@
 		10EE03342B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03302B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift */; };
 		10EE03362B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03352B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift */; };
 		10EE03382B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03372B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift */; };
-		10EE033A2B2B19DC0061C23F /* ProfileFriendPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */; };
 		10F298602B35769B00F51D06 /* ThemeChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F2985F2B35769B00F51D06 /* ThemeChangeDelegate.swift */; };
 		10F89C4F2B2114AC00E392FC /* FuncUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F89C4E2B2114AC00E392FC /* FuncUI.swift */; };
 /* End PBXBuildFile section */
@@ -100,7 +99,6 @@
 		10EE03302B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelGroupCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		10EE03352B2B0D1D0061C23F /* FriendsPageTableViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendsPageTableViewController + Extension.swift"; sourceTree = "<group>"; };
 		10EE03372B2B0ECE0061C23F /* GroupsPageTableViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsPageTableViewController + Extension.swift"; sourceTree = "<group>"; };
-		10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFriendPage.swift; sourceTree = "<group>"; };
 		10F2985F2B35769B00F51D06 /* ThemeChangeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangeDelegate.swift; sourceTree = "<group>"; };
 		10F89C4E2B2114AC00E392FC /* FuncUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,7 +251,6 @@
 				1072FFDB2B11495500B8BFB4 /* GroupsPageTableViewController.swift */,
 				10C591C62B24ADD5008493A3 /* UserPageViewController.swift */,
 				10EE03092B2A93A90061C23F /* ThemePageController.swift */,
-				10EE03392B2B19DC0061C23F /* ProfileFriendPage.swift */,
 				102968982B191D140036CD70 /* AuthorisationPage.swift */,
 				10D631A92B36B0AB00B53594 /* ControllerManager.swift */,
 			);
@@ -436,7 +433,6 @@
 				1072FFDC2B11495500B8BFB4 /* GroupsPageTableViewController.swift in Sources */,
 				10F298602B35769B00F51D06 /* ThemeChangeDelegate.swift in Sources */,
 				1072FFDA2B11491900B8BFB4 /* FriendsPageTableViewController.swift in Sources */,
-				10EE033A2B2B19DC0061C23F /* ProfileFriendPage.swift in Sources */,
 				10EE03342B2B04F50061C23F /* ModelGroupCD+CoreDataProperties.swift in Sources */,
 				102968A22B195AA40036CD70 /* NetworkService.swift in Sources */,
 				1072FFDE2B1149A100B8BFB4 /* PhotosPageCollectionViewController.swift in Sources */,

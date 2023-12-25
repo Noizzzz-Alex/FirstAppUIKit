@@ -52,6 +52,7 @@ final class UserPageViewController: UIViewController, ThemeChangeDelegate, Backg
     // MARK: Variables
     let networkService = NetworkService()
     var users = [User]()
+    static var isYouProfile = true
 
     var userImageProfile: UIImageView = {
         var photo = UIImageView()
@@ -87,7 +88,11 @@ final class UserPageViewController: UIViewController, ThemeChangeDelegate, Backg
         changeBackgroundColor()
         CurrentTheme.themeDelegate = self
         setupViews()
-        load()
+        if UserPageViewController.isYouProfile{
+            load()
+        }else{
+            anotherLoad()
+        }
     }
 
     
@@ -95,6 +100,14 @@ final class UserPageViewController: UIViewController, ThemeChangeDelegate, Backg
     // MARK: networkFunc
     func load() {
         networkService.getUser { [weak self] users in
+            self?.users = users
+            DispatchQueue.main.async {
+                self?.configureView(users: users.first ?? User(firstName: "John", lastName: "Dow", photo: "default", id: 1))
+            }
+        }
+    }
+    func anotherLoad(){
+        networkService.getAnotherUser { [weak self] users in
             self?.users = users
             DispatchQueue.main.async {
                 self?.configureView(users: users.first ?? User(firstName: "John", lastName: "Dow", photo: "default", id: 1))

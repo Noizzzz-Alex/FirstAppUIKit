@@ -7,11 +7,9 @@
 
 import UIKit
 
-final class FriendsPageTableViewController: UITableViewController,ThemeChangeDelegate, BackgroundColor  {
-    
-    
-    
+final class FriendsPageTableViewController: UITableViewController, ThemeChangeDelegate, BackgroundColor {
     // MARK: ProtocolsMethods
+
     func changeBackgroundColor() {
         switch CurrentTheme.currentTheme {
         case .light:
@@ -35,21 +33,19 @@ final class FriendsPageTableViewController: UITableViewController,ThemeChangeDel
         }
         tableView.reloadData()
     }
-    
+
     func themeDidChanged(toTheme: ThemeType) {
         changeBackgroundColor()
     }
-    
-    
-    
+
     // MARK: VARIABLES
+
     let networkService = NetworkService()
     let dataService = DataService()
     var friends = [Friend]()
-    
-    
-    
+
     // MARK: LIFE CYCLE
+
     override func viewDidLoad() {
         super.viewDidLoad()
         netGetFriends()
@@ -59,17 +55,17 @@ final class FriendsPageTableViewController: UITableViewController,ThemeChangeDel
         CurrentTheme.themeDelegate = self
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         changeBackgroundColor()
     }
-    
-    
+
     // MARK: TABLE VIEW
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: CustomTableViewCell.identifier,
@@ -81,19 +77,23 @@ final class FriendsPageTableViewController: UITableViewController,ThemeChangeDel
         switch CurrentTheme.currentTheme {
         case .light:
             cell.changeBackgroundColor()
-            
+
         case .dark:
             cell.changeBackgroundColor()
         case .gray:
             cell.changeBackgroundColor()
         }
+        cell.tap = { [weak self] firstName, lastName, photo in
+            NetworkService.anotherUserId = String(model.id)
+            UserPageViewController.isYouProfile = false
+            self?.navigationController?.pushViewController(UserPageViewController(), animated: true)
+        }
         return cell
     }
-    
-    
-    
+
     // MARK: PRIVATE FUNC
-    private func tableViewCellTapped(with model: Friend) {
+
+    func tableViewCellTapped(with model: Friend) {
         let image = UIImageView()
         DispatchQueue.global().async {
             if let url = URL(string: model.photo),
@@ -104,8 +104,8 @@ final class FriendsPageTableViewController: UITableViewController,ThemeChangeDel
             }
         }
     }
-    
-    private func netGetFriends(){
+
+    func netGetFriends() {
         networkService.getFriends { [weak self] results in
             switch results {
             case let .success(friends):
@@ -125,39 +125,35 @@ final class FriendsPageTableViewController: UITableViewController,ThemeChangeDel
             self.refreshControl?.endRefreshing()
         }
     }
-    
-    private func registerNavigationButton(){
+
+    func registerNavigationButton() {
         let profileButton = UIBarButtonItem(title: "My Profile", style: .plain, target: self, action: #selector(profileButtonTapped))
         navigationItem.rightBarButtonItem = profileButton
     }
-    
-    private func registerRefreshControl(){
+
+    func registerRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(update), for: .valueChanged)
     }
-    
-    
-    
+
     // MARK: OBJ-C FUNC
+
     @objc func profileButtonTapped() {
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         transition.type = .fade
+        UserPageViewController.isYouProfile = true
         let profileVC = UserPageViewController()
         navigationController?.view.layer.add(transition, forKey: nil)
         navigationController?.pushViewController(profileVC, animated: false)
     }
-    
+
     @objc func update() {
         netGetFriends()
     }
 }
 
-    
-    
-    
-    
 #Preview {
     FriendsPageTableViewController()
 }

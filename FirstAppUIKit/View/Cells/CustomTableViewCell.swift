@@ -33,7 +33,8 @@ class CustomTableViewCell: UITableViewCell, BackgroundColor {
         }
     }
     
-//    var tap: (String?, String?, String?) -> Void?
+    var tap: ((String, String, UIImage?) -> Void)?
+    
     static let identifier = "Cell"
 
     private var userPhoto: UIImageView = {
@@ -102,12 +103,18 @@ class CustomTableViewCell: UITableViewCell, BackgroundColor {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
-//        let recognizer = UITapGestureRecognizer(target: self, action: #selector(cellTap))
-//        addGestureRecognizer(recognizer)
+        registerRecognizer()
+        
     }
+    
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func registerRecognizer(){
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(cellTap))
+        addGestureRecognizer(recognizer)
     }
 
     func configureCell(friends: Friend) {
@@ -175,20 +182,10 @@ class CustomTableViewCell: UITableViewCell, BackgroundColor {
 
         ])
     }
-//    func getImageFromURL(_ urlString: String) -> UIImage? {
-//        guard let url = URL(string: urlString),
-//              let data = try? Data(contentsOf: url),
-//              let image = UIImage(data: data)
-//        else {
-//            return nil
-//        }
-//
-//        return image
-//    }
-
-//    @objc func cellTap(){
-//        tap()
-//    }
+    
+    @objc func cellTap(){
+        tap?(labelHigh.text ?? "John",labelMiddle.text ?? "Dow" ,userPhoto.image ?? UIImage(named: "person"))
+    }
 }
 
 #Preview() {
